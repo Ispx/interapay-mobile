@@ -1,0 +1,1 @@
+# Split your payment's with the JuntaPay app.
