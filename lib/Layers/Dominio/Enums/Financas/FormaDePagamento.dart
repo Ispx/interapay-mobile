@@ -1,7 +1,7 @@
 enum FormaDePagamento {
   Pix, // 0
-  MercadoPago, // 1 
-  Paypal, // 2
-  TransferenciaBancaria, // 3
-  Dinheiro, // 4
+  Paypal, // 1
+  MercadoPago, // 2
+  Dinheiro, // 3 
+  TransferenciaBancaria, // 4
 }

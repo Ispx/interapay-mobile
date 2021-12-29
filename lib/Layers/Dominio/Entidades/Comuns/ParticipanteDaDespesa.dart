@@ -1,5 +1,5 @@
-import 'Pessoa.dart';
 import '../../../../Core/Helpers/ValidacaoComMensagem.dart';
+import 'Pessoa.dart';
 
 class ParticipanteDaDespesa extends Pessoa {
   ParticipanteDaDespesa({

@@ -1,1 +1,4 @@
-enum TipoDePessoa { Fisica, Juridica }
+enum TipoDePessoa {
+  Fisica, // 0
+  Juridica, // 1
+}

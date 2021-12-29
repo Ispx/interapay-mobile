@@ -6,7 +6,7 @@ import 'InstituicaoBancaria.dart';
 class ContaBancaria extends PossuiId {
   String nome;
   TipoDeContaBancaria tipo;
-  String? descricao;
+  String? observacao;
   final Pessoa titularDaConta;
   final int agencia;
   final int numeroDaConta;
@@ -16,7 +16,7 @@ class ContaBancaria extends PossuiId {
     String? id,
     required this.nome,
     required this.tipo,
-    this.descricao,
+    this.observacao,
     required this.titularDaConta,
     required this.agencia,
     required this.numeroDaConta,
