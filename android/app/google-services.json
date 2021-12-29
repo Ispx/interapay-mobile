@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1053357815704",
+    "project_id": "juntapay-335e2",
+    "storage_bucket": "juntapay-335e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053357815704:android:5162436f0a41c76186dded",
+        "android_client_info": {
+          "package_name": "com.juntapay.juntapay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053357815704-c5cfpdce75j25evb9cuqfr5iob8i4p28.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.juntapay.juntapay",
+            "certificate_hash": "7a28888b19540485158f55fe53879a86101770ae"
+          }
+        },
+        {
+          "client_id": "1053357815704-dlcolcpg32nj356pg6u9gnh9ohscuuu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxpBjapTXshPzmFwNlsZInKn8HwdxnwGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1053357815704-dlcolcpg32nj356pg6u9gnh9ohscuuu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
