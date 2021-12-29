@@ -35,4 +35,4 @@ Nosso design system se encontra no `Figma` e você pode acessá-lo [clicando aqu
 
 ## Boas práticas
 
-Nós usamos a ferramenta GitFlow para administrar as versões e branch's do projeto - [veja mais sobre o GitFlow](.github/HOW_TO_USE_GITFLOW.md)
+Nós usamos a ferramenta `GitFlow` para administrar as versões e branch's do projeto - [veja mais sobre o GitFlow](.github/HOW_TO_USE_GITFLOW.md)
