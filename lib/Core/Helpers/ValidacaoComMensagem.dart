@@ -5,4 +5,6 @@ class ValidacaoComMensagem {
 
   final bool valido;
   final String? mensagem;
+
+  bool get contemMensagem => mensagem?.isNotEmpty == true;
 }
