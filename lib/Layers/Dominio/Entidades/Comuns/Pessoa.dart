@@ -22,10 +22,10 @@ class Pessoa extends PossuiId {
 
   //TODO: Criar a validação de telefone
   bool get emailEhValido => JuntaPayUtils.isNotEmpty(email) ? JuntaPayUtils.isValidEmail(email!) : false;
-  bool get telefoneEhValido => true;
+  bool get telefoneEhValido => throw UnimplementedError();
   bool get cpfCnpjEhValido => JuntaPayUtils.isNotEmpty(cpfCnpj) ? JuntaPayUtils.isValidCpfCnpj(cpfCnpj) : false;
 
   //TODO: Criar a formatação de telefone
   String get cpfCnpjFormatado => JuntaPayUtils.formatarCpfCnpj(cpfCnpj);
-  String get telefoneFormatado => '';
+  String get telefoneFormatado =>  throw UnimplementedError();
 }
