@@ -25,8 +25,8 @@ class Intera extends PossuiId {
   final ContaBancaria? contaBancaria;
   final String? chavePix;
   final bool obrigarComprovante;
-  final String? observacoes;
   final String? comprovante;
+  final String? observacoes;
   late final List<ParticipanteDaIntera> _amigos;
   final DateTime dataDeCriacao = DateTime.now();
 

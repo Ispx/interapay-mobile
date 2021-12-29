@@ -1,0 +1,1 @@
+enum Linguagem { PT, ID, AR, ZH, NL, FR, DE, IT, KO, EN, RU }
