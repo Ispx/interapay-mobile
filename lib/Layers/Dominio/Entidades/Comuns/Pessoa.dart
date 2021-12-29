@@ -1,3 +1,4 @@
+import '../../../../Core/Helpers/JuntaUtils.dart';
 import '../../Enums/Financas/TipoDePessoa.dart';
 import 'PossuiId.dart';
 
@@ -19,12 +20,12 @@ class Pessoa extends PossuiId {
     required this.tipo,
   }) : super(id: id);
 
-  //TODO: Criar as validações
-  bool get emailEhValido => true;
+  //TODO: Criar a validação de telefone
+  bool get emailEhValido => JuntaPayUtils.isNotEmpty(email) ? JuntaPayUtils.isValidEmail(email!) : false;
   bool get telefoneEhValido => true;
-  bool get cpfCnpjEhValido => true;
+  bool get cpfCnpjEhValido => JuntaPayUtils.isNotEmpty(cpfCnpj) ? JuntaPayUtils.isValidCpfCnpj(cpfCnpj) : false;
 
-  //TODO: Criar as formatações
-  String get cpfCnpjFormatado => '';
+  //TODO: Criar a formatação de telefone
+  String get cpfCnpjFormatado => JuntaPayUtils.formatarCpfCnpj(cpfCnpj);
   String get telefoneFormatado => '';
 }
