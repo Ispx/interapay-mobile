@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'Core/Routes.dart';
+
 class JuntaPayApp extends StatelessWidget {
   final String initialRoute;
 
@@ -13,10 +15,10 @@ class JuntaPayApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,
       initialRoute: initialRoute,
-      // getPages: InteraRoutes.routes,
+      getPages: JuntaPayRoutes.routes,
       themeMode: ThemeMode.light,
-      // theme: InteraTheme.light,
-      // darkTheme: InteraTheme.dark,
+      // theme: JuntaPayTheme.light,
+      // darkTheme: JuntaPayTheme.dark,
       builder: (context, child) => GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         behavior: HitTestBehavior.opaque,
