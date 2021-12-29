@@ -10,12 +10,12 @@ class JuntaPayApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return GetMaterialApp.router(
       title: 'JuntaPay',
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.cupertino,
-      initialRoute: initialRoute,
       getPages: JuntaPayRoutes.routes,
+      routeInformationParser: GetInformationParser(initialRoute: initialRoute),
+      defaultTransition: Transition.cupertino,
       themeMode: ThemeMode.light,
       // theme: JuntaPayTheme.light,
       // darkTheme: JuntaPayTheme.dark,

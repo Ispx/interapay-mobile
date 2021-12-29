@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 
-import 'router.dart';
-import '../../routes.dart';
+import 'Router.dart';
+import '../../Routes.dart';
 
 class GetxJuntaPayRouter extends GetxService implements JuntaPayRouter {
-  GetxJuntaPayRouter._();
 
   @override
   Future<T?>? to<T>(String route, {bool closeAll = false, dynamic arguments}) =>

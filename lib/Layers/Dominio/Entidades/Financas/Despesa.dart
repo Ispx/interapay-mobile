@@ -41,8 +41,10 @@ class Despesa extends PossuiId {
     ValidacaoComMensagem validacao = ValidacaoComMensagem.valido();
 
     validacao = validarAmigos();
+    if (validacao.valido == false) return validacao;
 
     validacao = validarFormaDePagamento();
+    if (validacao.valido == false) return validacao;
 
     return validacao;
   }
