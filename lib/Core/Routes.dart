@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import '../Layers/Presentation/UI/Home/HomePage.dart';
 
 class JuntaPayRoutes {
+  JuntaPayRoutes._();
+  
   static const SPLASH = '/';
   static const HOME = '/home';
   static const LOGIN = '/login';
