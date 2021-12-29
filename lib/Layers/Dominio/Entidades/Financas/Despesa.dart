@@ -38,29 +38,49 @@ class Despesa extends PossuiId {
   void adicionarAmigos(List<ParticipanteDaDespesa> amigos) => _amigos.addAll(amigos);
 
   ValidacaoComMensagem validar() {
-    if (amigos.length <= 1) return ValidacaoComMensagem.invalido('Adicione pelo menos um amigo');
+    ValidacaoComMensagem validacao = ValidacaoComMensagem.valido();
+
+    validacao = validarAmigos();
+
+    validacao = validarFormaDePagamento();
+
+    return validacao;
+  }
+
+  ValidacaoComMensagem validarAmigos() {
+    ValidacaoComMensagem validacao = ValidacaoComMensagem.valido();
+
+    if (amigos.length <= 1) validacao = ValidacaoComMensagem.invalido('Adicione pelo menos um amigo');
 
     if (Configuracao.assinatura == Assinatura.Gratis && amigos.length > 5)
+      //TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos
       return ValidacaoComMensagem.invalido('TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos');
 
-    if (valorTotal <= 0.0) return ValidacaoComMensagem.invalido('Informe um valor total maior que zero');
+    if (valorTotal <= 0.0) validacao = ValidacaoComMensagem.invalido('Informe um valor total maior que zero');
 
     for (var i = 0; i < amigos.length; i++) {
       ParticipanteDaDespesa _amigo = amigos[i];
 
       bool valido = _amigo.validar().valido;
 
-      if (valido == false) return ValidacaoComMensagem.invalido('Informe um valor maior que zero para o ${_amigo.nome}');
+      if (valido == false) validacao = ValidacaoComMensagem.invalido('Informe um valor maior que zero para o ${_amigo.nome}');
     }
 
+    return validacao;
+  }
+
+  ValidacaoComMensagem validarFormaDePagamento() {
+    ValidacaoComMensagem validacao = ValidacaoComMensagem.valido();
+
     if (formaDePagamento == FormaDePagamento.Pix && JuntaPayUtils.isNotEmpty(chavePix) == false)
-      return ValidacaoComMensagem.invalido('Informe a chave pix');
+      validacao = ValidacaoComMensagem.invalido('Informe a chave pix');
 
     if (formaDePagamento == FormaDePagamento.TransferenciaBancaria && contaBancaria == null)
-      return ValidacaoComMensagem.invalido('Informe uma conta bancária');
+      validacao = ValidacaoComMensagem.invalido('Informe uma conta bancária');
 
-    if (formaDePagamento != FormaDePagamento.Dinheiro && obrigarComprovante == true && comprovante == null) return ValidacaoComMensagem.invalido('Envie um comprovante');
+    if (formaDePagamento != FormaDePagamento.Dinheiro && obrigarComprovante == true && comprovante == null)
+      validacao = ValidacaoComMensagem.invalido('Envie um comprovante');
 
-    return ValidacaoComMensagem.valido();
+    return validacao;
   }
 }
