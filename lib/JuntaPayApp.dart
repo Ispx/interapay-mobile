@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
+import 'Core/Helpers/ScreenBreakpoints.dart';
 import 'Core/Routes.dart';
 
 class JuntaPayApp extends StatelessWidget {
@@ -19,10 +21,16 @@ class JuntaPayApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       // theme: JuntaPayTheme.light,
       // darkTheme: JuntaPayTheme.dark,
-      builder: (context, child) => GestureDetector(
-        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        behavior: HitTestBehavior.opaque,
-        child: child,
+      builder: (context, child) => ResponsiveWrapper.builder(
+        ClampingScrollWrapper.builder(
+          context,
+          GestureDetector(
+            onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+            behavior: HitTestBehavior.opaque,
+            child: child,
+          ),
+        ),
+        breakpoints: ScreenBreakpoints.breakpoints,
       ),
     );
   }
