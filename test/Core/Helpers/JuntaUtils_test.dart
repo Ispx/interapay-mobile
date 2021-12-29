@@ -1,4 +1,4 @@
-import 'package:flutter_test/flutter_test.dart';
+import 'package:test/test.dart';
 import 'package:juntapay/Core/Helpers/JuntaUtils.dart';
 
 void main() {

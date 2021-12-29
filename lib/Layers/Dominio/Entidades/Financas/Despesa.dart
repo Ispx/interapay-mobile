@@ -40,7 +40,7 @@ class Despesa extends PossuiId {
   ValidacaoComMensagem validar() {
     if (amigos.length <= 1) return ValidacaoComMensagem.invalido('Adicione pelo menos um amigo');
 
-    if (Configuracao.assinatura == Assinatura.Gratis && amigos.length >= 5)
+    if (Configuracao.assinatura == Assinatura.Gratis && amigos.length > 5)
       return ValidacaoComMensagem.invalido('TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos');
 
     if (valorTotal <= 0.0) return ValidacaoComMensagem.invalido('Informe um valor total maior que zero');
@@ -59,7 +59,7 @@ class Despesa extends PossuiId {
     if (formaDePagamento == FormaDePagamento.TransferenciaBancaria && contaBancaria == null)
       return ValidacaoComMensagem.invalido('Informe uma conta bancária');
 
-    if (obrigarComprovante == true && comprovante == null) return ValidacaoComMensagem.invalido('Envie um comprovante');
+    if (formaDePagamento != FormaDePagamento.Dinheiro && obrigarComprovante == true && comprovante == null) return ValidacaoComMensagem.invalido('Envie um comprovante');
 
     return ValidacaoComMensagem.valido();
   }

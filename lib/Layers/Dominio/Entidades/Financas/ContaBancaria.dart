@@ -10,7 +10,7 @@ class ContaBancaria extends PossuiId {
   final Pessoa titularDaConta;
   final int agencia;
   final int numeroDaConta;
-  final InstituacaoBancaria instituicaoBancaria;
+  final InstituicaoBancaria instituicaoBancaria;
 
   ContaBancaria({
     String? id,

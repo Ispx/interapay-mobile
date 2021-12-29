@@ -1,9 +1,9 @@
 import '../Comuns/PossuiId.dart';
 
-class InstituacaoBancaria extends PossuiId {
+class InstituicaoBancaria extends PossuiId {
   final String nome;
 
-  InstituacaoBancaria({
+  InstituicaoBancaria({
     String? id,
     required this.nome,
   }) : super(id: id);
