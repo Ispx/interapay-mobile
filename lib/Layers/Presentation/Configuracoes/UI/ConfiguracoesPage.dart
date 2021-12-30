@@ -40,11 +40,7 @@ class ConfiguracoesPage extends StatelessWidget {
                     [
                       ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Sobre')),
                       ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
-                      ItemDaConfiguracaoWidget(
-                        configuracao: ItemDaConfiguracao('Sair'),
-                        foregroundColor: JuntaPayColors.error,
-                        iconColor: JuntaPayColors.error,
-                      ),
+                      ItemDaConfiguracaoWidget.withColor(ItemDaConfiguracao('Sair'), JuntaPayColors.error),
                     ],
                   ),
                 ),

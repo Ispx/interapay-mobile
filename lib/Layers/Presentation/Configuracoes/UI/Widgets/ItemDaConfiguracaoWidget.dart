@@ -12,6 +12,13 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  factory ItemDaConfiguracaoWidget.withColor(ItemDaConfiguracao configuracao, Color color, {void Function()? onTap}) => ItemDaConfiguracaoWidget(
+        configuracao: configuracao,
+        foregroundColor: color,
+        iconColor: color,
+        onTap: onTap,
+      );
+
   final ItemDaConfiguracao configuracao;
 
   final Color? foregroundColor;
