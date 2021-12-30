@@ -13,22 +13,25 @@ class Configuracoes {
   static late String versaoDoAplicativo;
   static late Assinatura assinatura;
 
-  static late Rx<Moeda> _moeda;
+  static late final  Rx<Moeda> _moeda;
   static Moeda get moeda => _moeda.value;
   static String get siglaMoedaTexto => moeda.sigla;
-  static void alterarMoeda(Moeda moeda) => _moeda.value = moeda;
+  static void alterarMoeda(Moeda value) => _moeda.value = value;
 
-  static late Rx<Linguagem> _linguagem;
+  static late final  Rx<Linguagem> _linguagem;
   static Linguagem get linguagem => _linguagem.value;
   static String get linguagemTexto => linguagem.name;
+  static void alterarLinguagem(Linguagem value) => _linguagem.value = value;
 
-  static late Rx<Tema> _tema;
+  static late final  Rx<Tema> _tema;
   static Tema get tema => _tema.value;
   static String get temaTexto => tema.name;
+  // static void alterarTema(Tema value) => _tema.value = value;
 
-  static Rxn<TipoDeSeguranca> _tipoDeSeguranca = Rxn<TipoDeSeguranca>();
+  static final Rxn<TipoDeSeguranca> _tipoDeSeguranca = Rxn<TipoDeSeguranca>();
   static TipoDeSeguranca? get tipoDeSeguranca => _tipoDeSeguranca.value;
   static String? get tipoDeSegurancaTexto => tipoDeSeguranca?.name;
+  static void alterarTipoDeSeguranca(TipoDeSeguranca? value) => _tipoDeSeguranca.value = value;
 
   static Future<void> init() async {
     _moeda = Moeda.BRL.obs;

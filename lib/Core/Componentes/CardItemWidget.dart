@@ -4,7 +4,7 @@ class CardItemWidget extends StatelessWidget {
   const CardItemWidget({
     required this.child,
     this.onTap,
-    this.height = 70,
+    this.height = 65,
     this.backgroundColor,
     this.padding = const EdgeInsets.symmetric(horizontal: 24),
     Key? key,

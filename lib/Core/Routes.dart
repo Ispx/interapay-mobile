@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
 
-import '../Layers/Presentation/Moedas/UI/MoedasPage.dart';
-import '../Layers/Presentation/Moedas/Bindings/MoedasBinding.dart';
+import '../Layers/Presentation/Home/UI/HomePage.dart';
+import '../Layers/Presentation/Moeda/UI/MoedasPage.dart';
+import '../Layers/Presentation/Moeda/Bindings/MoedasBinding.dart';
 import '../Layers/Presentation/Configuracoes/UI/ConfiguracoesPage.dart';
 import '../Layers/Presentation/Configuracoes/Bindings/ConfiguracoesBinding.dart';
-import '../Layers/Presentation/Home/UI/HomePage.dart';
+import '../Layers/Presentation/Linguagens/UI/LinguagensPage.dart';
+import '../Layers/Presentation/Linguagens/Bindings/LinguagensBinding.dart';
 
 class JuntaPayRoutes {
   JuntaPayRoutes._();
@@ -14,6 +16,7 @@ class JuntaPayRoutes {
   static const HOME = '/home';
   static const CONFIGURACOES = '/configuracoes';
   static const MOEDAS = '$CONFIGURACOES/moedas';
+  static const LINGUAGENS = '$CONFIGURACOES/linguagens';
 
   static String get initialRoute => CONFIGURACOES;
 
@@ -31,6 +34,11 @@ class JuntaPayRoutes {
           name: MOEDAS,
           page: () => MoedasPage(),
           binding: MoedasBinding(),
+        ),
+        GetPage(
+          name: LINGUAGENS,
+          page: () => LinguagensPage(),
+          binding: LinguagensBinding(),
         ),
       ];
 }

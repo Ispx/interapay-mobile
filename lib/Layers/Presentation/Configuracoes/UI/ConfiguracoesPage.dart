@@ -36,12 +36,30 @@ class ConfiguracoesPage extends StatelessWidget {
                             router.toMoedas();
                           },
                         ),
-                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto)),
-                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto)),
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto),
+                          onTap: () {
+                            router.toLinguagens();
+                          },
+                        ),
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto),
+                          onTap: () {
+                            // router.toTemas();
+                          },
+                        ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Segurança', value: Configuracoes.tipoDeSegurancaTexto ?? 'Não definido'),
+                          onTap: () {
+                            // router.toTiposDeSeguranca();
+                          },
                         ),
-                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Notificação')),
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Notificação'),
+                          onTap: () {
+                            // router.toNotificacao();
+                          },
+                        ),
                       ],
                     ),
                   ),

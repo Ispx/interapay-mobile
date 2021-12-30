@@ -5,4 +5,5 @@ abstract class JuntaPayRouter {
   Future<T?>? toHome<T>({String route = JuntaPayRoutes.HOME, bool closeAll = false});
   Future<T?>? toConfiguracoes<T>({String route = JuntaPayRoutes.CONFIGURACOES, bool closeAll = false});
   Future<T?>? toMoedas<T>({String route = JuntaPayRoutes.MOEDAS, bool closeAll = false});
+  Future<T?>? toLinguagens<T>({String route = JuntaPayRoutes.LINGUAGENS, bool closeAll = false});
 }
