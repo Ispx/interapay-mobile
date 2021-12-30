@@ -4,12 +4,37 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 import 'Core/Helpers/ScreenBreakpoints.dart';
 import 'Core/Routes.dart';
+import 'Core/Services/Theme/ThemeService.dart';
 import 'Core/Theme/JuntaPayTheme.dart';
+import 'Layers/Dominio/Enums/Comuns/Tema.dart';
 
-class JuntaPayApp extends StatelessWidget {
+class JuntaPayApp extends StatefulWidget {
+  const JuntaPayApp({required this.initialRoute});
+
   final String initialRoute;
 
-  const JuntaPayApp({required this.initialRoute});
+  @override
+  State<JuntaPayApp> createState() => _JuntaPayAppState();
+}
+
+class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    WidgetsBinding.instance!.addObserver(this);
+    ThemeService.init();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangePlatformBrightness() {
+    if (ThemeService.temaAtual == Tema.Dispositivo) ThemeService.alterarParaTemaDoDispositivo();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +42,13 @@ class JuntaPayApp extends StatelessWidget {
       title: 'JuntaPay',
       debugShowCheckedModeBanner: false,
       getPages: JuntaPayRoutes.routes,
-      initialRoute: initialRoute,
+      initialRoute: widget.initialRoute,
       defaultTransition: Transition.cupertino,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeService.temaAtual != Tema.Dispositivo
+          ? ThemeService.temaAtual == Tema.Claro
+              ? ThemeMode.light
+              : ThemeMode.dark
+          : ThemeMode.system,
       theme: JuntaPayTheme.light,
       darkTheme: JuntaPayTheme.dark,
       builder: (context, child) => ResponsiveWrapper.builder(

@@ -142,5 +142,9 @@ class JuntaPayTheme {
   );
 
   static final ThemeData light = _base.copyWith(brightness: Brightness.light);
-  static final ThemeData dark = _base.copyWith(brightness: Brightness.dark);
+  static final ThemeData dark = _base.copyWith(
+    //TODO: Criar as cores dark
+    brightness: Brightness.dark,
+    primaryColor: Colors.red,
+  );
 }

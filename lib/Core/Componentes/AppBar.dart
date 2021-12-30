@@ -27,7 +27,7 @@ class JuntaPayAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       centerTitle: true,
       toolbarHeight: size.height,
-      backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor ?? Theme.of(context).primaryColor,
       foregroundColor: backgroundColor == Colors.white ? Colors.black : Colors.white,
     );
   }

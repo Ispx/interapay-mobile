@@ -19,7 +19,7 @@ class TemasPage extends StatelessWidget {
           child: BaseSelectableList<Tema>(
             list: Tema.values,
             titleGetter: (e) => e.name,
-            onSelect: controller.selecionarTema,
+            onSelect: (v) async => await controller.selecionarTema(v),
             selected: controller.temaSelecionado,
           ),
         ),

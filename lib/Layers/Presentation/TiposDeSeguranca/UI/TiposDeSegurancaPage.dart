@@ -19,7 +19,7 @@ class TiposDeSegurancaPage extends StatelessWidget {
           child: BaseSelectableList<TipoDeSeguranca>(
             list: TipoDeSeguranca.values,
             titleGetter: (e) => e.name,
-            onSelect: controller.selecionarTiposDeSeguranca,
+            onSelect: (v) async => await controller.selecionarTiposDeSeguranca(v),
             selected: controller.tipoDeSegurancaSelecionado,
           ),
         ),
