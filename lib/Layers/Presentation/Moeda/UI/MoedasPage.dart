@@ -14,11 +14,14 @@ class MoedasPage extends StatelessWidget {
     return Obx(
       () => Scaffold(
         appBar: JuntaPayAppBar(title: 'Moedas'),
-        body: BaseSelectableList<Moeda>(
-          list: Moeda.values,
-          titleGetter: (e) => e.name,
-          onSelect: controller.selecionarMoeda,
-          selected: controller.moedaSelecionada,
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: BaseSelectableList<Moeda>(
+            list: Moeda.values,
+            titleGetter: (e) => e.name,
+            onSelect: controller.selecionarMoeda,
+            selected: controller.moedaSelecionada,
+          ),
         ),
       ),
     );
