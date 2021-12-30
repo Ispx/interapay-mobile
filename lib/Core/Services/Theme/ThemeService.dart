@@ -50,5 +50,4 @@ class ThemeService {
 
   static ThemeMode _brightnessToThemeMode(Brightness brightness) => brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light;
   static ThemeMode _temaToThemeMode(Tema tema) => tema == Tema.Claro ? ThemeMode.light : ThemeMode.dark;
-  // static Tema _themeMode ToTema(ThemeMode tema) => tema == ThemeMode .light ? Tema.Claro : Tema.Escuro;
 }
