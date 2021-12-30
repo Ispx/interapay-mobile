@@ -10,8 +10,8 @@ class TiposDeSegurancaController extends GetxController {
   Future<void> selecionarTiposDeSeguranca(TipoDeSeguranca? value) async {
     if (value == tipoDeSegurancaSelecionado) {
       bool? removerSeguranca = await JuntaPay.bottomSheet<bool>(
-        title: 'Sair da conta?',
-        description: 'Tem certeza que deseja deslogar de sua conta?',
+        title: 'Remover segurança?',
+        description: 'Tem certeza que deseja remover a segurança do seu aplicativo?',
       );
 
       if (removerSeguranca == false) {
