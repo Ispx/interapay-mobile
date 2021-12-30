@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:juntapay/Core/Componentes/CardItemWidget.dart';
 
+import '../../../../../Core/Componentes/CardItemWidget.dart';
 import '../../../../../Core/Theme/JuntaPayColors.dart';
 import '../../ItemDaConfiguracao.dart';
 
