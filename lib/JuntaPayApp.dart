@@ -4,6 +4,7 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 import 'Core/Helpers/ScreenBreakpoints.dart';
 import 'Core/Routes.dart';
+import 'Core/Theme/JuntaPayTheme.dart';
 
 class JuntaPayApp extends StatelessWidget {
   final String initialRoute;
@@ -19,8 +20,8 @@ class JuntaPayApp extends StatelessWidget {
       routeInformationParser: GetInformationParser(initialRoute: initialRoute),
       defaultTransition: Transition.cupertino,
       themeMode: ThemeMode.light,
-      // theme: JuntaPayTheme.light,
-      // darkTheme: JuntaPayTheme.dark,
+      theme: JuntaPayTheme.light,
+      darkTheme: JuntaPayTheme.dark,
       builder: (context, child) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(
           context,
