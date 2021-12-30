@@ -10,10 +10,10 @@ class JuntaPayRoutes {
   JuntaPayRoutes._();
 
   static const SPLASH = '/';
+  static const LOGIN = '/login';
   static const HOME = '/home';
   static const CONFIGURACOES = '/configuracoes';
-  static const MOEDAS = '/moedas';
-  static const LOGIN = '/login';
+  static const MOEDAS = '$CONFIGURACOES/moedas';
 
   static String get initialRoute => CONFIGURACOES;
 
@@ -26,13 +26,11 @@ class JuntaPayRoutes {
           name: CONFIGURACOES,
           page: () => ConfiguracoesPage(),
           binding: ConfiguracoesBinding(),
-          children: [
-            GetPage(
-              name: MOEDAS,
-              page: () => MoedasPage(),
-              binding: MoedasBinding(),
-            ),
-          ],
+        ),
+        GetPage(
+          name: MOEDAS,
+          page: () => MoedasPage(),
+          binding: MoedasBinding(),
         ),
       ];
 }

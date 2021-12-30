@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ItemDaConfiguracao {
-  ItemDaConfiguracao(
+  const ItemDaConfiguracao(
     this.title, {
     this.value,
     this.backgroundColor,

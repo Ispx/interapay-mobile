@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Controllers/ConfiguracoesController.dart';
-import '../../../../Core/Theme/JuntaPayColors.dart';
-import '../../../../Core/Componentes/AppBar.dart';
-import '../ItemDaConfiguracao.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
+import '../ItemDaConfiguracao.dart';
+import '../Controllers/ConfiguracoesController.dart';
+import '../../../../Core/Configuracoes.dart';
+import '../../../../Core/Theme/JuntaPayColors.dart';
+import '../../../../Core/Services/Router/GetxRouter.dart';
+import '../../../../Core/Componentes/AppBar.dart';
 
 class ConfiguracoesPage extends StatelessWidget {
   ConfiguracoesController get controller => Get.find<ConfiguracoesController>();
@@ -26,7 +28,20 @@ class ConfiguracoesPage extends StatelessWidget {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   childrenDelegate: SliverChildListDelegate.fixed(
-                    controller.configuracoes.map((e) => ItemDaConfiguracaoWidget(configuracao: e)).toList(),
+                    [
+                      ItemDaConfiguracaoWidget(
+                        configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.moedaTexto),
+                        onTap: () {
+                          router.toMoedas();
+                        },
+                      ),
+                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto)),
+                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto)),
+                      ItemDaConfiguracaoWidget(
+                        configuracao: ItemDaConfiguracao('Segurança', value: Configuracoes.tipoDeSegurancaTexto ?? 'Não definido'),
+                      ),
+                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Notificação')),
+                    ],
                   ),
                 ),
               ),
