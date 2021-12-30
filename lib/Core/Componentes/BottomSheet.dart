@@ -67,7 +67,7 @@ class JuntaPayBottomSheet extends StatelessWidget {
           SizedBox(height: 14),
           Flexible(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 48),
               child: Text(
                 description,
                 textAlign: TextAlign.center,
