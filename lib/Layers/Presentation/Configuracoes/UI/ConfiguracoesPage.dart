@@ -30,7 +30,7 @@ class ConfiguracoesPage extends StatelessWidget {
                   childrenDelegate: SliverChildListDelegate.fixed(
                     [
                       ItemDaConfiguracaoWidget(
-                        configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.moedaTexto),
+                        configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
                         onTap: () {
                           router.toMoedas();
                         },

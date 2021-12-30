@@ -13,7 +13,7 @@ class Configuracoes {
   static late Assinatura assinatura;
 
   static late Moeda moeda;
-  static String get moedaTexto => moeda.name;
+  static String get siglaMoedaTexto => moeda.sigla;
 
   static late Linguagem linguagem;
   static String get linguagemTexto => linguagem.name;
