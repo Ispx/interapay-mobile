@@ -1,6 +1,7 @@
 abstract class ILocalStorageService {
-  Object? read({required String key});
-  Future<bool> add({required String key, required String value});
-  Future<bool> delete({required String key});
+  Object? read(String key);
+  Future<bool> add(String key, dynamic value);
+  Future<bool> delete(String key);
   Future<bool> deleteAll();
+  Future<bool> deleteKeys(List<String> keys);
 }

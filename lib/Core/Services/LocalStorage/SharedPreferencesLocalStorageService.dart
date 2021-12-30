@@ -8,10 +8,10 @@ class SharedPreferencesLocalStorageService implements ILocalStorageService {
   final SharedPreferences sharedPreferences;
 
   @override
-  Object? read({required String key}) => sharedPreferences.get(key);
+  Object? read(String key) => sharedPreferences.get(key);
 
   @override
-  Future<bool> add({required String key, required dynamic value}) async {
+  Future<bool> add(String key, dynamic value) async {
     if (value is String)
       return await sharedPreferences.setString(key, value);
     else if (value is bool)
@@ -27,8 +27,18 @@ class SharedPreferencesLocalStorageService implements ILocalStorageService {
   }
 
   @override
-  Future<bool> delete({required String key}) async => await sharedPreferences.remove(key);
+  Future<bool> delete(String key) async => await sharedPreferences.remove(key);
 
   @override
   Future<bool> deleteAll() async => await sharedPreferences.clear();
+
+  @override
+  Future<bool> deleteKeys(List<String> keys) async {
+    bool result = false;
+    for (var i = 0; i < keys.length; i++) {
+      result = await delete(keys[i]);
+    }
+
+    return result;
+  }
 }
