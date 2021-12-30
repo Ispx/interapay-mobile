@@ -4,10 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Configuracoes.dart';
+import 'Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'Services/LocalStorage/ILocalStorageService.dart';
 import 'Services/Router/GetxRouter.dart';
 import 'Services/Router/Router.dart';
@@ -20,7 +20,8 @@ class Initializer {
       WidgetsFlutterBinding.ensureInitialized();
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
-      await _inicializarFirebaseCrashlytics();
+      if (kIsWeb == false) await _inicializarFirebaseCrashlytics();
+
       await _adicionarServicosGlobais();
 
       await Configuracoes.init();

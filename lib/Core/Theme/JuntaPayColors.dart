@@ -65,5 +65,5 @@ class JuntaPayColors {
   static final Color skeleton = HexColor("E0E0E0");
 
   static final Color textFieldBorder = HexColor("F1F1FA");
-  static final Color textGray = HexColor("94A0B4");
+  static final Color textGray = HexColor("91919F");
 }

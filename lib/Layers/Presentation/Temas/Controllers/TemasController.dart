@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:juntapay/Core/Services/Theme/ThemeService.dart';
 
+import '../../../../Core/Services/Theme/ThemeService.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../../../Dominio/Enums/Comuns/Tema.dart';
 

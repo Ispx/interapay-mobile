@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-import 'package:juntapay/Core/Constants/LocalStoragePath.dart';
-import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../Layers/Dominio/Enums/Comuns/Assinatura.dart';
@@ -8,6 +6,8 @@ import '../Layers/Dominio/Enums/Comuns/Linguagem.dart';
 import '../Layers/Dominio/Enums/Comuns/Moeda.dart';
 import '../Layers/Dominio/Enums/Comuns/Tema.dart';
 import '../Layers/Dominio/Enums/Comuns/TipoDeSeguranca.dart';
+import 'Constants/LocalStoragePath.dart';
+import 'Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 
 class Configuracoes {
   const Configuracoes._();
@@ -54,6 +54,8 @@ class Configuracoes {
   static Future<bool> alterarTipoDeSeguranca(TipoDeSeguranca? value) async {
     _tipoDeSeguranca.value = value;
 
+    if (value == null) return await localStorage.delete(LocalStoragePath.TIPO_DE_SEGURANCA);
+    
     return await localStorage.add(LocalStoragePath.TIPO_DE_SEGURANCA, value);
   }
 

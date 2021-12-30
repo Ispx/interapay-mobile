@@ -9,4 +9,6 @@ abstract class JuntaPayRouter {
   Future<T?>? toTemas<T>({String route = JuntaPayRoutes.TEMAS, bool closeAll = false});
   Future<T?>? toTiposDeSeguranca<T>({String route = JuntaPayRoutes.TIPOS_DE_SEGURANCA, bool closeAll = false});
   Future<T?>? toNotificacoes<T>({String route = JuntaPayRoutes.NOTIFICACOES, bool closeAll = false});
+  
+  void back<T>({T? result});
 }
