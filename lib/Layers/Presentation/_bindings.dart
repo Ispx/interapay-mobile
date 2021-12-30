@@ -3,4 +3,4 @@ export 'Linguagens/Bindings/LinguagensBinding.dart';
 export 'Moedas/Bindings/MoedasBinding.dart';
 export 'Temas/Bindings/TemasBinding.dart';
 export 'TiposDeSeguranca/Bindings/TiposDeSegurancaBinding.dart';
-// export 'Notificacoes/Bindings/NotificacoesBinding.dart';
+export 'Notificacoes/Bindings/NotificacoesBinding.dart';

@@ -47,10 +47,10 @@ class JuntaPayRoutes {
           page: () => TiposDeSegurancaPage(),
           binding: TiposDeSegurancaBinding(),
         ),
-        //  GetPage(
-        //   name: NOTIFICACOES,
-        //   page: () => NotificacoesPage(),
-        //   binding: NotificacoesBinding(),
-        // ),
+         GetPage(
+          name: NOTIFICACOES,
+          page: () => NotificacoesPage(),
+          binding: NotificacoesBinding(),
+        ),
       ];
 }
