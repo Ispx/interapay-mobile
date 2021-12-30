@@ -26,7 +26,7 @@ class Configuracoes {
   static late final Rx<Tema> _tema;
   static Tema get tema => _tema.value;
   static String get temaTexto => tema.name;
-  // static void alterarTema(Tema value) => _tema.value = value;
+  static void alterarTema(Tema value) => _tema.value = value;
 
   static final Rxn<TipoDeSeguranca> _tipoDeSeguranca = Rxn<TipoDeSeguranca>();
   static TipoDeSeguranca? get tipoDeSeguranca => _tipoDeSeguranca.value;
