@@ -1,7 +1,7 @@
 import 'ContaBancaria.dart';
 import '../../../../Core/Helpers/JuntaUtils.dart';
 import '../../../../Core/Helpers/ValidacaoComMensagem.dart';
-import '../Comuns/Configuracao.dart';
+import '../../../../Core/Configuracoes.dart';
 import '../Comuns/ParticipanteDaDespesa.dart';
 import '../Comuns/PossuiId.dart';
 import '../../Enums/Comuns/Assinatura.dart';
@@ -54,7 +54,7 @@ class Despesa extends PossuiId {
 
     if (amigos.length <= 1) validacao = ValidacaoComMensagem.invalido('Adicione pelo menos um amigo');
 
-    if (Configuracao.assinatura == Assinatura.Gratis && amigos.length > 5)
+    if (Configuracoes.assinatura == Assinatura.Gratis && amigos.length > 5)
       //TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos
       return ValidacaoComMensagem.invalido('TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos');
 

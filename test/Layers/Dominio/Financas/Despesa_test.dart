@@ -1,10 +1,11 @@
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:test/test.dart';
 
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/ContaBancaria.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/InstituicaoBancaria.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/FormaDePagamento.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDeContaBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Configuracao.dart';
+import 'package:juntapay/Core/Configuracoes.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Comuns/ParticipanteDaDespesa.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
@@ -55,8 +56,16 @@ void main() {
     despesa.adicionarAmigos(gerarAmigos());
   }
 
-  setUpAll(() {
-    Configuracao.init();
+  setUpAll(() async {
+    PackageInfo.setMockInitialValues(
+      appName: "JuntaPay",
+      buildNumber: "1",
+      packageName: "com.juntapay.juntapay",
+      version: "1.0.0",
+      buildSignature: "7A28888B19540485158F55FE53879A86101770AE",
+    );
+
+    await Configuracoes.init();
   });
 
   test('Deve retornar um erro caso tenha menos de 1 amigo', () {

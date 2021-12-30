@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
+import 'Configuracoes.dart';
 import 'Services/Router/GetxRouter.dart';
 import 'Services/Router/Router.dart';
 
@@ -17,6 +18,8 @@ class Initializer {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
       await _inicializarFirebaseCrashlytics();
+
+      await Configuracoes.init();
       await _adicionarServicosGlobais();
     } catch (e) {
       print(e);
