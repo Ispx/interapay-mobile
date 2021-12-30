@@ -66,7 +66,7 @@ class JuntaPayButton extends StatelessWidget {
             side: BorderSide.none,
           ),
         ),
-        minimumSize: MaterialStateProperty.all<Size?>(size ?? Size(double.infinity, 60)),
+        minimumSize: MaterialStateProperty.all<Size?>(size ?? Size(double.infinity, 55)),
         overlayColor: MaterialStateProperty.all<Color>(Colors.white.withOpacity(0.1)),
         backgroundColor: MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) return Colors.grey;

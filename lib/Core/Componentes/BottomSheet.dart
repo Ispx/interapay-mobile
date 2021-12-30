@@ -38,7 +38,7 @@ class JuntaPayBottomSheet extends StatelessWidget {
         color: Colors.white,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -50,7 +50,7 @@ class JuntaPayBottomSheet extends StatelessWidget {
             height: 5,
             width: 50,
           ),
-          SizedBox(height: 24),
+          SizedBox(height: 20),
           Flexible(
             child: Text(
               title,
@@ -64,7 +64,7 @@ class JuntaPayBottomSheet extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 14),
+          SizedBox(height: 20),
           Flexible(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 48),
@@ -81,10 +81,9 @@ class JuntaPayBottomSheet extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 14),
           ResponsiveRowColumn(
-            columnPadding: EdgeInsets.all(20),
-            rowPadding: EdgeInsets.all(20),
+            columnPadding: EdgeInsets.only(bottom: 20, left: 20, right: 20, top: 20),
+            rowPadding: EdgeInsets.only(bottom: 20, left: 20, right: 20, top: 20),
             rowMainAxisAlignment: MainAxisAlignment.spaceBetween,
             rowSpacing: 20,
             layout: ResponsiveWrapper.of(context).isSmallerThan(MOBILE) ? ResponsiveRowColumnType.COLUMN : ResponsiveRowColumnType.ROW,
