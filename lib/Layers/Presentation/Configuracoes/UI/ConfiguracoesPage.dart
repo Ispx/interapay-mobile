@@ -45,19 +45,19 @@ class ConfiguracoesPage extends StatelessWidget {
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto),
                           onTap: () {
-                            // router.toTemas();
+                            router.toTemas();
                           },
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Segurança', value: Configuracoes.tipoDeSegurancaTexto ?? 'Não definido'),
                           onTap: () {
-                            // router.toTiposDeSeguranca();
+                            router.toTiposDeSeguranca();
                           },
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Notificação'),
                           onTap: () {
-                            // router.toNotificacao();
+                            router.toNotificacoes();
                           },
                         ),
                       ],

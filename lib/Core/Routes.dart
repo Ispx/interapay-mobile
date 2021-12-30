@@ -6,7 +6,7 @@ class JuntaPayRoutes {
   JuntaPayRoutes._();
 
   static String get initialRoute => CONFIGURACOES;
-  
+
   static const SPLASH = '/';
   static const LOGIN = '/login';
   static const HOME = '/home';
@@ -38,11 +38,11 @@ class JuntaPayRoutes {
           page: () => LinguagensPage(),
           binding: LinguagensBinding(),
         ),
-        // GetPage(
-        //   name: TEMAS,
-        //   page: () => TemasPage(),
-        //   binding: TemasBinding(),
-        // ),
+        GetPage(
+          name: TEMAS,
+          page: () => TemasPage(),
+          binding: TemasBinding(),
+        ),
         // GetPage(
         //   name: TIPOS_DE_SEGURANCA,
         //   page: () => TiposDeSegurancaPage(),
