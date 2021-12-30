@@ -1,4 +1,8 @@
+import 'package:get/get.dart';
+import 'package:juntapay/Core/Services/LocalStorage/ILocalStorageService.dart';
+import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test/test.dart';
 
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/ContaBancaria.dart';
@@ -45,7 +49,7 @@ void main() {
     amigos: gerarAmigos(),
   );
 
-  resetarDespesa() {
+  void resetarDespesa() {
     despesa.valorTotal = 500.0;
     despesa.comprovante = 'teste';
     despesa.chavePix = 'chavePix';
@@ -57,6 +61,7 @@ void main() {
   }
 
   setUpAll(() async {
+    
     PackageInfo.setMockInitialValues(
       appName: "JuntaPay",
       buildNumber: "1",
@@ -64,6 +69,10 @@ void main() {
       version: "1.0.0",
       buildSignature: "7A28888B19540485158F55FE53879A86101770AE",
     );
+    
+    SharedPreferences.setMockInitialValues({});
+    var sharedPreferences = await SharedPreferences.getInstance();
+    await Get.putAsync<ILocalStorageService>(() async => SharedPreferencesLocalStorageService(sharedPreferences));
 
     await Configuracoes.init();
   });
