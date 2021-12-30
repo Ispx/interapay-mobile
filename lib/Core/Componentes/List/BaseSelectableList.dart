@@ -15,7 +15,7 @@ class BaseSelectableList<T> extends StatelessWidget {
   }) : super(key: key);
 
   final List<T> list;
-  final T selected;
+  final T? selected;
   final String Function(T) titleGetter;
   final void Function(T) onSelect;
   final ScrollPhysics? physics;
