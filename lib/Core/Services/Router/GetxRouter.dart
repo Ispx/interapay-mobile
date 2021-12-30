@@ -19,6 +19,15 @@ class GetxJuntaPayRouter extends GetxService implements JuntaPayRouter {
 
   @override
   Future<T?>? toLinguagens<T>({String route = JuntaPayRoutes.LINGUAGENS, bool closeAll = false}) => to<T>(route, closeAll: closeAll);
+
+  @override
+  Future<T?>? toNotificacoes<T>({String route = JuntaPayRoutes.NOTIFICACOES, bool closeAll = false}) => to<T>(route, closeAll: closeAll);
+
+  @override
+  Future<T?>? toTemas<T>({String route = JuntaPayRoutes.TEMAS, bool closeAll = false}) => to<T>(route, closeAll: closeAll);
+
+  @override
+  Future<T?>? toTiposDeSeguranca<T>({String route = JuntaPayRoutes.TIPOS_DE_SEGURANCA, bool closeAll = false}) => to<T>(route, closeAll: closeAll);
 }
 
 JuntaPayRouter get router => Get.find<JuntaPayRouter>();

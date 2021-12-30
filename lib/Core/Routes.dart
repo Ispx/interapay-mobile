@@ -1,24 +1,22 @@
 import 'package:get/get.dart';
-
-import '../Layers/Presentation/Home/UI/HomePage.dart';
-import '../Layers/Presentation/Moeda/UI/MoedasPage.dart';
-import '../Layers/Presentation/Moeda/Bindings/MoedasBinding.dart';
-import '../Layers/Presentation/Configuracoes/UI/ConfiguracoesPage.dart';
-import '../Layers/Presentation/Configuracoes/Bindings/ConfiguracoesBinding.dart';
-import '../Layers/Presentation/Linguagens/UI/LinguagensPage.dart';
-import '../Layers/Presentation/Linguagens/Bindings/LinguagensBinding.dart';
+import '../Layers/Presentation/_pages.dart';
+import '../Layers/Presentation/_bindings.dart';
 
 class JuntaPayRoutes {
   JuntaPayRoutes._();
 
+  static String get initialRoute => CONFIGURACOES;
+  
   static const SPLASH = '/';
   static const LOGIN = '/login';
   static const HOME = '/home';
   static const CONFIGURACOES = '/configuracoes';
   static const MOEDAS = '$CONFIGURACOES/moedas';
   static const LINGUAGENS = '$CONFIGURACOES/linguagens';
+  static const TEMAS = '$CONFIGURACOES/temas';
+  static const TIPOS_DE_SEGURANCA = '$CONFIGURACOES/tiposdeseguranca';
+  static const NOTIFICACOES = '$CONFIGURACOES/notificacoes';
 
-  static String get initialRoute => CONFIGURACOES;
 
   static List<GetPage> get routes => [
         GetPage(
@@ -40,5 +38,20 @@ class JuntaPayRoutes {
           page: () => LinguagensPage(),
           binding: LinguagensBinding(),
         ),
+        // GetPage(
+        //   name: TEMAS,
+        //   page: () => TemasPage(),
+        //   binding: TemasBinding(),
+        // ),
+        // GetPage(
+        //   name: TIPOS_DE_SEGURANCA,
+        //   page: () => TiposDeSegurancaPage(),
+        //   binding: TiposDeSegurancaBinding(),
+        // ),
+        //  GetPage(
+        //   name: NOTIFICACOES,
+        //   page: () => NotificacoesPage(),
+        //   binding: NotificacoesBinding(),
+        // ),
       ];
 }
