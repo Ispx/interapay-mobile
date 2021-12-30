@@ -10,11 +10,19 @@ class Configuracoes {
   const Configuracoes._();
 
   static late String versaoDoAplicativo;
-  static late Moeda moeda;
-  static late Linguagem linguagem;
-  static late Tema tema;
-  static late TipoDeSeguranca? tipoDeSeguranca;
   static late Assinatura assinatura;
+
+  static late Moeda moeda;
+  static String get moedaTexto => moeda.name;
+
+  static late Linguagem linguagem;
+  static String get linguagemTexto => linguagem.name;
+
+  static late Tema tema;
+  static String get temaTexto => tema.name;
+
+  static TipoDeSeguranca? tipoDeSeguranca;
+  static String? get tipoDeSegurancaTexto => tipoDeSeguranca?.name;
 
   static Future<void> init() async {
     moeda = Moeda.BRL;
