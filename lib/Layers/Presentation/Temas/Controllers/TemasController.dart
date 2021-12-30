@@ -8,6 +8,8 @@ class TemasController extends GetxController {
   final Rx<Tema> _temaSelecionado = Rx<Tema>(Configuracoes.tema);
   Tema get temaSelecionado => _temaSelecionado.value;
   Future<void> selecionarTema(Tema value) async {
+    if (value == temaSelecionado) return;
+
     await ThemeService.alterarConfiguracaoDoTema(value);
 
     _temaSelecionado.value = Configuracoes.tema;

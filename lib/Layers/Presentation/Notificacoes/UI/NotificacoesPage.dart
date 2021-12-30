@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../Widgets/ItemNotificacaoWidget.dart';
+import 'Widgets/ItemNotificacaoWidget.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../Controllers/NotificacoesController.dart';
 import '../../../../Core/Componentes/AppBar.dart';
@@ -28,21 +28,21 @@ class NotificacoesPage extends StatelessWidget {
                   title: 'Despesas',
                   description: 'Receba notificações de pagamentos das despesas',
                   value: Configuracoes.permitirNotificacoesDasDespesas,
-                  onChanged: Configuracoes.alterarNotificacoesDasDespesas,
+                  onChanged: (v) async => await Configuracoes.alterarNotificacoesDasDespesas(v),
                 ),
                 SizedBox(height: 24),
                 ItemNotificacaoWidget(
                   title: 'Dicas & Artigos',
                   description: 'Receba conselhos financeiros práticos',
                   value: Configuracoes.permitirNotificacoesDeDicas,
-                  onChanged: Configuracoes.alterarNotificacoesDeDicas,
+                  onChanged: (v) async => await Configuracoes.alterarNotificacoesDeDicas(v),
                 ),
                 SizedBox(height: 24),
                 ItemNotificacaoWidget(
                   title: 'Geral',
                   description: 'Receba notificações das atualizações no App',
                   value: Configuracoes.permitirNotificacoesGeral,
-                  onChanged: Configuracoes.alterarNotificacoesGeral,
+                  onChanged: (v) async => await Configuracoes.alterarNotificacoesGeral(v),
                 ),
               ],
             ),

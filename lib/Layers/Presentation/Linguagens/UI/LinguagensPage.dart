@@ -19,7 +19,7 @@ class LinguagensPage extends StatelessWidget {
           child: BaseSelectableList<Linguagem>(
             list: Linguagem.values,
             titleGetter: (e) => e.name,
-            onSelect: controller.selecionarLinguagem,
+            onSelect: (v) async => await controller.selecionarLinguagem(v),
             selected: controller.linguagemSelecionada,
           ),
         ),

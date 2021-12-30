@@ -6,7 +6,9 @@ import '../../../Dominio/Enums/Comuns/TipoDeSeguranca.dart';
 class TiposDeSegurancaController extends GetxController {
   final Rxn<TipoDeSeguranca> _tipoDeSegurancaSelecionado = Rxn<TipoDeSeguranca>(Configuracoes.tipoDeSeguranca);
   TipoDeSeguranca? get tipoDeSegurancaSelecionado => _tipoDeSegurancaSelecionado.value;
-  void selecionarTiposDeSeguranca(TipoDeSeguranca? value) {
+  Future<void> selecionarTiposDeSeguranca(TipoDeSeguranca? value) async {
+    if (value == tipoDeSegurancaSelecionado) return;
+
     if (value == null) {
       //TODO: Perguntar para o usuário se deseja remover a segurança
       //caso sim:
@@ -14,8 +16,8 @@ class TiposDeSegurancaController extends GetxController {
       //caso não:
       // break ou return;
     }
-    
-    Configuracoes.alterarTipoDeSeguranca(value);
+
+    await Configuracoes.alterarTipoDeSeguranca(value);
 
     _tipoDeSegurancaSelecionado.value = Configuracoes.tipoDeSeguranca;
   }

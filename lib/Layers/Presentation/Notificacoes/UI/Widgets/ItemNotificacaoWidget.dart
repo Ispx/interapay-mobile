@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Core/Componentes/CustomSwitcher.dart';
-import '../../../../Core/Theme/JuntaPayColors.dart';
-import '../../../../Core/Theme/JuntaPayFont.dart';
+import '../../../../../Core/Componentes/CustomSwitcher.dart';
+import '../../../../../Core/Theme/JuntaPayColors.dart';
+import '../../../../../Core/Theme/JuntaPayFont.dart';
 
 class ItemNotificacaoWidget extends StatelessWidget {
   const ItemNotificacaoWidget({

@@ -4,8 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Configuracoes.dart';
+import 'Services/LocalStorage/ILocalStorageService.dart';
 import 'Services/Router/GetxRouter.dart';
 import 'Services/Router/Router.dart';
 
@@ -18,9 +21,9 @@ class Initializer {
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
       await _inicializarFirebaseCrashlytics();
+      await _adicionarServicosGlobais();
 
       await Configuracoes.init();
-      await _adicionarServicosGlobais();
     } catch (e) {
       print(e);
       rethrow;
@@ -28,6 +31,9 @@ class Initializer {
   }
 
   static Future<void> _adicionarServicosGlobais() async {
+    SharedPreferences _sharedPreferences = await SharedPreferences.getInstance();
+    Get.lazyPut<ILocalStorageService>(() => SharedPreferencesLocalStorageService(_sharedPreferences));
+
     Get.lazyPut<JuntaPayRouter>(() => GetxJuntaPayRouter());
   }
 

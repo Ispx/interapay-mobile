@@ -5,7 +5,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:juntapay/Core/Services/LocalStorage/ILocalStorageService.dart';
 
 class _StoragePath {
-  static const CLIENTES = 'clientes';
   static const PERMITIR_EXCLUIR = 'permitir_excluir';
   static const NOME_USUARIO = 'nome_usuario';
   static const QUANTIDADE_CLIENTES = 'quantidade_clientes';
@@ -18,14 +17,12 @@ void main() {
 
   bool mock = true;
 
-  final List<String> clientes = ['Bernardo', 'Gabriel'];
   final bool permitirExcluir = true;
   final String nomeUsuario = 'Bernardo';
-  final double quantidadeClientes = 2;
+  final int quantidadeClientes = 2;
   final double quantidade = 2.4;
 
   final Map<String, Object> storageMap = {
-    _StoragePath.CLIENTES: clientes,
     _StoragePath.PERMITIR_EXCLUIR: permitirExcluir,
     _StoragePath.NOME_USUARIO: nomeUsuario,
     _StoragePath.QUANTIDADE_CLIENTES: quantidadeClientes,
@@ -41,41 +38,41 @@ void main() {
   });
 
   group('Read', () {
-    test('Deve retornar um List<String> caso for sucesso', () {
-      var result = localStorage.read(_StoragePath.CLIENTES);
-
-      expect(result, clientes);
-
-      result = localStorage.read(_StoragePath.NOME_USUARIO);
+    test('Deve retornar uma String caso for sucesso', () {
+      var result = localStorage.read<String>(_StoragePath.NOME_USUARIO);
 
       expect(result, nomeUsuario);
+    });
 
-      result = localStorage.read(_StoragePath.PERMITIR_EXCLUIR);
+    test('Deve retornar um Bool caso for sucesso', () {
+      var result = localStorage.read<bool>(_StoragePath.PERMITIR_EXCLUIR);
 
       expect(result, permitirExcluir);
-
-      result = localStorage.read(_StoragePath.QUANTIDADE);
-
-      expect(result, quantidade);
-
-      result = localStorage.read(_StoragePath.QUANTIDADE_CLIENTES);
+    });
+    test('Deve retornar um Int caso for sucesso', () {
+      var result = localStorage.read(_StoragePath.QUANTIDADE_CLIENTES);
 
       expect(result, quantidadeClientes);
+    });
+    test('Deve retornar um Double caso for sucesso', () {
+      var result = localStorage.read<double>(_StoragePath.QUANTIDADE);
+
+      expect(result, quantidade);
     });
   });
 
   group('Delete, DeleteKeys e DeleteAll', () {
     test('Deve retornar true caso remover com sucesso', () async {
-      final result = await localStorage.delete(_StoragePath.CLIENTES);
+      final result = await localStorage.delete(_StoragePath.NOME_USUARIO);
 
       expect(result, true);
-      expect(localStorage.read(_StoragePath.CLIENTES), null);
+      expect(localStorage.read(_StoragePath.NOME_USUARIO), null);
     });
 
     test('Deve retornar true caso remover os 2 registros com sucesso', () async {
-      final result = await localStorage.deleteKeys([_StoragePath.CLIENTES, _StoragePath.QUANTIDADE_CLIENTES]);
+      final result = await localStorage.deleteKeys([_StoragePath.NOME_USUARIO, _StoragePath.QUANTIDADE_CLIENTES]);
 
-      final _clientes = localStorage.read(_StoragePath.CLIENTES);
+      final _clientes = localStorage.read(_StoragePath.NOME_USUARIO);
       final _quantidadeClientes = localStorage.read(_StoragePath.QUANTIDADE_CLIENTES);
 
       expect(result, true);
@@ -85,7 +82,7 @@ void main() {
 
     test('Deve retornar true caso remover todos os registros com sucesso', () async {
       final result = await localStorage.deleteAll();
-      final storage = localStorage.read(_StoragePath.CLIENTES);
+      final storage = localStorage.read(_StoragePath.NOME_USUARIO);
 
       expect(result, true);
       expect(storage, null);
@@ -95,10 +92,10 @@ void main() {
   group('Add', () {
     setUpAll(() => mock = false);
     test('Deve retornar true caso adicionar o registro', () async {
-      final result = await localStorage.add(_StoragePath.CLIENTES, clientes);
+      final result = await localStorage.add(_StoragePath.NOME_USUARIO, nomeUsuario);
 
       expect(result, true);
-      expect(localStorage.read(_StoragePath.CLIENTES), clientes);
+      expect(localStorage.read(_StoragePath.NOME_USUARIO), nomeUsuario);
     });
 
     test('Deve retornar um erro ao tentar adicionar um objeto não compatível', () async {
