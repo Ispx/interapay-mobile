@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../Layers/Dominio/Enums/Comuns/Assinatura.dart';
@@ -12,22 +13,27 @@ class Configuracoes {
   static late String versaoDoAplicativo;
   static late Assinatura assinatura;
 
-  static late Moeda moeda;
+  static late Rx<Moeda> _moeda;
+  static Moeda get moeda => _moeda.value;
   static String get siglaMoedaTexto => moeda.sigla;
+  static void alterarMoeda(Moeda moeda) => _moeda.value = moeda;
 
-  static late Linguagem linguagem;
+  static late Rx<Linguagem> _linguagem;
+  static Linguagem get linguagem => _linguagem.value;
   static String get linguagemTexto => linguagem.name;
 
-  static late Tema tema;
+  static late Rx<Tema> _tema;
+  static Tema get tema => _tema.value;
   static String get temaTexto => tema.name;
 
-  static TipoDeSeguranca? tipoDeSeguranca;
+  static Rxn<TipoDeSeguranca> _tipoDeSeguranca = Rxn<TipoDeSeguranca>();
+  static TipoDeSeguranca? get tipoDeSeguranca => _tipoDeSeguranca.value;
   static String? get tipoDeSegurancaTexto => tipoDeSeguranca?.name;
 
   static Future<void> init() async {
-    moeda = Moeda.BRL;
-    linguagem = Linguagem.PT;
-    tema = Tema.Claro;
+    _moeda = Moeda.BRL.obs;
+    _linguagem = Linguagem.PT.obs;
+    _tema = Tema.Claro.obs;
     assinatura = Assinatura.Gratis;
     versaoDoAplicativo = await _obterVersaoDoAplicativo();
   }

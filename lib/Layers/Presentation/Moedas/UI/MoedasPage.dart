@@ -13,16 +13,16 @@ class MoedasPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: JuntaPayAppBar(title: 'Moedas'),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: EdgeInsets.only(top: 10, bottom: MediaQuery.of(context).padding.bottom),
-          child: Column(
-            children: [
-              Obx(
-                () => Container(
+    return Obx(
+      () => Scaffold(
+        appBar: JuntaPayAppBar(title: 'Moedas'),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Padding(
+            padding: EdgeInsets.only(top: 10, bottom: MediaQuery.of(context).padding.bottom),
+            child: Column(
+              children: [
+                Container(
                   color: Colors.white,
                   child: ListView.custom(
                     shrinkWrap: true,
@@ -31,7 +31,8 @@ class MoedasPage extends StatelessWidget {
                       Moeda.values
                           .map(
                             (moeda) => CardItemWidget(
-                              backgroundColor: controller.moedaSelecionada == moeda ? Theme.of(context).primaryColor.withOpacity(0.1) : Colors.transparent,
+                              backgroundColor:
+                                  controller.moedaSelecionada == moeda ? Theme.of(context).primaryColor.withOpacity(0.1) : Colors.transparent,
                               onTap: () => controller.selecionarMoeda(moeda),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -58,8 +59,8 @@ class MoedasPage extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -14,53 +14,55 @@ class ConfiguracoesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: JuntaPayAppBar(title: 'Configurações'),
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Padding(
-          padding: EdgeInsets.only(top: 10, bottom: MediaQuery.of(context).padding.bottom),
-          child: Column(
-            children: [
-              Container(
-                color: Colors.white,
-                child: ListView.custom(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  childrenDelegate: SliverChildListDelegate.fixed(
-                    [
-                      ItemDaConfiguracaoWidget(
-                        configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
-                        onTap: () {
-                          router.toMoedas();
-                        },
-                      ),
-                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto)),
-                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto)),
-                      ItemDaConfiguracaoWidget(
-                        configuracao: ItemDaConfiguracao('Segurança', value: Configuracoes.tipoDeSegurancaTexto ?? 'Não definido'),
-                      ),
-                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Notificação')),
-                    ],
+    return Obx(
+      () => Scaffold(
+        appBar: JuntaPayAppBar(title: 'Configurações'),
+        body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
+          child: Padding(
+            padding: EdgeInsets.only(top: 10, bottom: MediaQuery.of(context).padding.bottom),
+            child: Column(
+              children: [
+                Container(
+                  color: Colors.white,
+                  child: ListView.custom(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    childrenDelegate: SliverChildListDelegate.fixed(
+                      [
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
+                          onTap: () {
+                            router.toMoedas();
+                          },
+                        ),
+                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto)),
+                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto)),
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Segurança', value: Configuracoes.tipoDeSegurancaTexto ?? 'Não definido'),
+                        ),
+                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Notificação')),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                color: Colors.white,
-                child: ListView.custom(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  childrenDelegate: SliverChildListDelegate.fixed(
-                    [
-                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Sobre')),
-                      ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
-                      ItemDaConfiguracaoWidget.withColor(ItemDaConfiguracao('Sair'), JuntaPayColors.error),
-                    ],
+                SizedBox(height: 10),
+                Container(
+                  color: Colors.white,
+                  child: ListView.custom(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    childrenDelegate: SliverChildListDelegate.fixed(
+                      [
+                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Sobre')),
+                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
+                        ItemDaConfiguracaoWidget.withColor(ItemDaConfiguracao('Sair'), JuntaPayColors.error),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

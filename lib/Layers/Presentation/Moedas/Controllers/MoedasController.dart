@@ -8,5 +8,7 @@ class MoedasController extends GetxController {
   Moeda get moedaSelecionada => _moedaSelecionada.value;
   void selecionarMoeda(Moeda moeda) {
     _moedaSelecionada.value = moeda;
+
+    Configuracoes.alterarMoeda(moeda);
   }
 }
