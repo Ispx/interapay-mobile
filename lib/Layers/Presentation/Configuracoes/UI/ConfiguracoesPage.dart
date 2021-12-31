@@ -37,7 +37,7 @@ class ConfiguracoesPage extends StatelessWidget {
                         ItemDaConfiguracaoWidget(
                           titleWidget: JuntaPayProWidget(),
                           onTap: () {
-                            JuntaPayBottomSheet.bottomSheet(
+                            JuntaPayBottomSheet.show(
                               title: 'Title',
                               description: 'Decription',
                             );

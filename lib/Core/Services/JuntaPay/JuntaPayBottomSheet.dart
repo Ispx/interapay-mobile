@@ -6,7 +6,7 @@ import '../../Componentes/BottomSheet.dart';
 class JuntaPayBottomSheet {
   const JuntaPayBottomSheet._();
 
-  static Future<T?> bottomSheet<T>({
+  static Future<T?> show<T>({
     String? title,
     String? description,
     void Function()? primaryButtonTap,
@@ -35,7 +35,7 @@ class JuntaPayBottomSheet {
     );
   }
 
-  static Future<T?> bottomSheetWithOneButton<T>({
+  static Future<T?> withOneButton<T>({
     String? title,
     String? description,
     String buttonText = 'Continuar',
@@ -60,7 +60,7 @@ class JuntaPayBottomSheet {
     );
   }
 
-  static Future<T?> bottomSheetWithoutButton<T>({
+  static Future<T?> withoutButton<T>({
     String? title,
     String? description,
     void Function()? onCloseButton,
@@ -81,7 +81,7 @@ class JuntaPayBottomSheet {
     );
   }
 
-  static Future<T?> customBottomSheet<T>(Widget child) async {
+  static Future<T?> custom<T>(Widget child) async {
     return await Get.bottomSheet(
       child,
       backgroundColor: Colors.transparent,
