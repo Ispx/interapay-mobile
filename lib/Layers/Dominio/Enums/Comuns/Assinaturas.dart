@@ -1,0 +1,2 @@
+
+enum Assinaturas { Gratis, Paga }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../Dominio/Enums/Comuns/Linguagem.dart';
+import '../../../Dominio/Enums/Comuns/Linguagens.dart';
 import '../Controllers/LinguagensController.dart';
 import '../../../../Core/Componentes/AppBar.dart';
 import '../../../../Core/Componentes/List/BaseSelectableList.dart';
@@ -16,9 +16,9 @@ class LinguagensPage extends StatelessWidget {
         appBar: JuntaPayAppBar(title: 'Linguagens'),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
-          child: BaseSelectableList<Linguagem>(
-            list: Linguagem.values,
-            titleGetter: (e) => e.name,
+          child: BaseSelectableList<Linguagens>(
+            list: Linguagens.values,
+            titleGetter: (e) => e.nomeComSigla,
             onSelect: (v) async => await controller.selecionarLinguagem(v),
             selected: controller.linguagemSelecionada,
           ),

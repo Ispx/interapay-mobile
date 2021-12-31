@@ -4,7 +4,7 @@ enum TipoDePessoa {
 }
 
 extension TipoDePessoaExtension on TipoDePessoa {
-  String get name {
+  String get nome {
     switch (this) {
       case TipoDePessoa.Fisica:
         return 'Pessoa Física';

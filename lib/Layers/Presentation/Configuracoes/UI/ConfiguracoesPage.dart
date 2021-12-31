@@ -39,15 +39,15 @@ class ConfiguracoesPage extends StatelessWidget {
                           onTap: () => JuntaPayBottomSheet.showAssinaturas(),
                         ),
                         ItemDaConfiguracaoWidget(
-                          configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
+                          configuracao: ItemDaConfiguracao('Moedas', value: Configuracoes.siglaMoedaTexto),
                           onTap: () => router.toMoedas(),
                         ),
                         ItemDaConfiguracaoWidget(
-                          configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto),
+                          configuracao: ItemDaConfiguracao('Linguagens', value: Configuracoes.linguagemTexto),
                           onTap: () => router.toLinguagens(),
                         ),
                         ItemDaConfiguracaoWidget(
-                          configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto),
+                          configuracao: ItemDaConfiguracao('Temas', value: Configuracoes.temaTexto),
                           onTap: () => router.toTemas(),
                         ),
                         ItemDaConfiguracaoWidget(

@@ -4,7 +4,7 @@ import '../../../../Core/Helpers/ValidacaoComMensagem.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../Comuns/ParticipanteDaDespesa.dart';
 import '../Comuns/PossuiId.dart';
-import '../../Enums/Comuns/Assinatura.dart';
+import '../../Enums/Comuns/Assinaturas.dart';
 import '../../Enums/Financas/FormaDePagamento.dart';
 
 class DespesaEntity extends PossuiId {
@@ -54,7 +54,7 @@ class DespesaEntity extends PossuiId {
 
     if (amigos.length <= 1) validacao = ValidacaoComMensagem.invalido('Adicione pelo menos um amigo');
 
-    if (Configuracoes.assinatura == Assinatura.Gratis && amigos.length > 5)
+    if (Configuracoes.assinatura == Assinaturas.Gratis && amigos.length > 5)
       //TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos
       return ValidacaoComMensagem.invalido('TODO: Oferecer para o usuário a assinatura paga para adicionar mais de 5 amigos');
 

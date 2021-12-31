@@ -2,10 +2,10 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'ILocalStorageService.dart';
-import '../../../Layers/Dominio/Enums/Comuns/Linguagem.dart';
-import '../../../Layers/Dominio/Enums/Comuns/Moeda.dart';
-import '../../../Layers/Dominio/Enums/Comuns/Tema.dart';
-import '../../../Layers/Dominio/Enums/Comuns/TipoDeSeguranca.dart';
+import '../../../Layers/Dominio/Enums/Comuns/Linguagens.dart';
+import '../../../Layers/Dominio/Enums/Comuns/Moedas.dart';
+import '../../../Layers/Dominio/Enums/Comuns/Temas.dart';
+import '../../../Layers/Dominio/Enums/Comuns/TiposDeSeguranca.dart';
 
 class SharedPreferencesLocalStorageService implements ILocalStorageService {
   const SharedPreferencesLocalStorageService(this.sharedPreferences);
@@ -23,14 +23,14 @@ class SharedPreferencesLocalStorageService implements ILocalStorageService {
         return sharedPreferences.getDouble(key) as T?;
       case int:
         return sharedPreferences.getInt(key) as T?;
-      case Linguagem:
-        return ((sharedPreferences.getInt(key))?.toLinguagemEnum as T?);
-      case Moeda:
-        return ((sharedPreferences.getInt(key))?.toMoedaEnum as T?);
-      case Tema:
-        return ((sharedPreferences.getInt(key))?.toTemaEnum as T?);
-      case TipoDeSeguranca:
-        return ((sharedPreferences.getInt(key))?.toTipoDeSegurancaEnum as T?);
+      case Linguagens:
+        return ((sharedPreferences.getInt(key))?.toLinguagensEnum as T?);
+      case Moedas:
+        return ((sharedPreferences.getInt(key))?.toMoedasEnum as T?);
+      case Temas:
+        return ((sharedPreferences.getInt(key))?.toTemasEnum as T?);
+      case TiposDeSeguranca:
+        return ((sharedPreferences.getInt(key))?.toTiposDeSegurancaEnum as T?);
       default:
         return sharedPreferences.get(key) as T?;
     }
@@ -48,13 +48,13 @@ class SharedPreferencesLocalStorageService implements ILocalStorageService {
       return await sharedPreferences.setInt(key, value);
     else if (value is List<String>)
       return await sharedPreferences.setStringList(key, value);
-    else if (value is Linguagem)
+    else if (value is Linguagens)
       return await sharedPreferences.setInt(key, value.toIndex);
-    else if (value is Moeda)
+    else if (value is Moedas)
       return await sharedPreferences.setInt(key, value.toIndex);
-    else if (value is Tema)
+    else if (value is Temas)
       return await sharedPreferences.setInt(key, value.toIndex);
-    else if (value is TipoDeSeguranca)
+    else if (value is TiposDeSeguranca)
       return await sharedPreferences.setInt(key, value.toIndex);
     else
       throw AssertionError('value is not compatible with shared preferences');

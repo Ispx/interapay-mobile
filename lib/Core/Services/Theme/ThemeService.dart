@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../Layers/Dominio/Enums/Comuns/Tema.dart';
+import '../../../Layers/Dominio/Enums/Comuns/Temas.dart';
 import '../../Configuracoes.dart';
 
 class ThemeService {
   const ThemeService._();
 
-  static Tema get temaAtual => Configuracoes.tema;
+  static Temas get temaAtual => Configuracoes.tema;
 
   static Future<void> init() async {
-    if (temaAtual == Tema.Dispositivo) {
+    if (temaAtual == Temas.Dispositivo) {
       await alterarParaTemaDoDispositivo();
     }
   }
@@ -18,15 +18,15 @@ class ThemeService {
   static void _alterarTema(ThemeMode tema) => Get.changeThemeMode(tema);
 
   static Future<ThemeMode> obterTemaAtual() async {
-    if (temaAtual == Tema.Dispositivo) return obterTemaDoDispositivo();
+    if (temaAtual == Temas.Dispositivo) return obterTemaDoDispositivo();
 
     return _temaToThemeMode(temaAtual);
   }
 
-  static Future<Tema> alterarConfiguracaoDoTema(Tema tema) async {
+  static Future<Temas> alterarConfiguracaoDoTema(Temas tema) async {
     Configuracoes.alterarTema(tema);
 
-    if (tema == Tema.Claro || tema == Tema.Escuro) {
+    if (tema == Temas.Claro || tema == Temas.Escuro) {
       _alterarTema(_temaToThemeMode(tema));
     } else {
       await alterarParaTemaDoDispositivo();
@@ -48,5 +48,5 @@ class ThemeService {
   }
 
   static ThemeMode _brightnessToThemeMode(Brightness brightness) => brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light;
-  static ThemeMode _temaToThemeMode(Tema tema) => tema == Tema.Claro ? ThemeMode.light : ThemeMode.dark;
+  static ThemeMode _temaToThemeMode(Temas tema) => tema == Temas.Claro ? ThemeMode.light : ThemeMode.dark;
 }

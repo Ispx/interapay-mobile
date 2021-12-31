@@ -6,7 +6,7 @@ import 'Core/Helpers/ScreenBreakpoints.dart';
 import 'Core/Routes.dart';
 import 'Core/Services/Theme/ThemeService.dart';
 import 'Core/Theme/JuntaPayTheme.dart';
-import 'Layers/Dominio/Enums/Comuns/Tema.dart';
+import 'Layers/Dominio/Enums/Comuns/Temas.dart';
 import 'Layers/Data/Database/Moor/SqliteDatabase.dart';
 
 class JuntaPayApp extends StatefulWidget {
@@ -34,7 +34,7 @@ class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
 
   @override
   void didChangePlatformBrightness() {
-    if (ThemeService.temaAtual == Tema.Dispositivo) ThemeService.alterarParaTemaDoDispositivo();
+    if (ThemeService.temaAtual == Temas.Dispositivo) ThemeService.alterarParaTemaDoDispositivo();
   }
 
   @override
@@ -45,8 +45,8 @@ class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
       getPages: JuntaPayRoutes.routes,
       initialRoute: widget.initialRoute,
       defaultTransition: Transition.cupertino,
-      themeMode: ThemeService.temaAtual != Tema.Dispositivo
-          ? ThemeService.temaAtual == Tema.Claro
+      themeMode: ThemeService.temaAtual != Temas.Dispositivo
+          ? ThemeService.temaAtual == Temas.Claro
               ? ThemeMode.light
               : ThemeMode.dark
           : ThemeMode.system,
