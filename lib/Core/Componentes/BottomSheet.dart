@@ -94,14 +94,16 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Container(
-            decoration: BoxDecoration(
-              color: JuntaPayColors.primary40,
-              borderRadius: BorderRadius.circular(50),
+          if (showDragDownWidget == true) ...{
+            Container(
+              decoration: BoxDecoration(
+                color: JuntaPayColors.primary40,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              height: 5,
+              width: 50,
             ),
-            height: 5,
-            width: 50,
-          ),
+          },
           if (showCloseButton == true) ...{
             Align(
               alignment: Alignment.centerRight,
@@ -117,7 +119,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
                 highlightColor: Colors.transparent,
                 hoverColor: Colors.transparent,
                 splashColor: Colors.transparent,
-                padding: EdgeInsets.only(right: 24, left: 24),
+                padding: const EdgeInsets.only(right: 24, left: 24),
                 icon: Icon(
                   Icons.close,
                   size: 24,

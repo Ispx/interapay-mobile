@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../Core/Componentes/AssinaturaWidget.dart';
 import 'Widgets/JuntaPayProWidget.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
@@ -20,9 +21,9 @@ class ConfiguracoesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Configurações'),
+        appBar: const JuntaPayAppBar(title: 'Configurações'),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.only(top: 10, bottom: MediaQuery.of(context).padding.bottom),
             child: Column(
@@ -31,16 +32,13 @@ class ConfiguracoesPage extends StatelessWidget {
                   color: Colors.white,
                   child: ListView.custom(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     childrenDelegate: SliverChildListDelegate.fixed(
                       [
                         ItemDaConfiguracaoWidget(
-                          titleWidget: JuntaPayProWidget(),
+                          titleWidget: const JuntaPayProWidget(),
                           onTap: () {
-                            JuntaPayBottomSheet.show(
-                              title: 'Title',
-                              description: 'Decription',
-                            );
+                            JuntaPayBottomSheet.showAssinaturas();
                           },
                         ),
                         ItemDaConfiguracaoWidget(
@@ -77,7 +75,7 @@ class ConfiguracoesPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Container(
                   color: Colors.white,
                   child: ListView.custom(

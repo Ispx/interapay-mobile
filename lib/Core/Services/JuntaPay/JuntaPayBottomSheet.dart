@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../Componentes/AssinaturaWidget.dart';
 import '../../Componentes/BottomSheet.dart';
 
 class JuntaPayBottomSheet {
@@ -31,6 +32,7 @@ class JuntaPayBottomSheet {
         showDragDownWidget: showDragDownWidget,
         customContent: customContent,
       ),
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
     );
   }
@@ -56,6 +58,7 @@ class JuntaPayBottomSheet {
         showDragDownWidget: showDragDownWidget,
         customContent: customContent,
       ),
+      isScrollControlled: true,
       backgroundColor: Colors.transparent,
     );
   }
@@ -77,6 +80,8 @@ class JuntaPayBottomSheet {
         showDragDownWidget: showDragDownWidget,
         customContent: customContent,
       ),
+      isScrollControlled: true,
+      ignoreSafeArea: false, // add this
       backgroundColor: Colors.transparent,
     );
   }
@@ -85,6 +90,15 @@ class JuntaPayBottomSheet {
     return await Get.bottomSheet(
       child,
       backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+    );
+  }
+
+  static Future<T?> showAssinaturas<T>() async {
+    return await withoutButton(
+      customContent: AssinaturaWidget(),
+      showCloseButton: true,
+      showDragDownWidget: false,
     );
   }
 }
