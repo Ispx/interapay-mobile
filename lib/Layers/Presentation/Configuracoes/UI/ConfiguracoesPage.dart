@@ -5,12 +5,15 @@ import 'Widgets/JuntaPayProWidget.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
 import '../Controllers/ConfiguracoesController.dart';
+import '../../../../Core/Services/JuntaPay/JuntaPayBottomSheet.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../../../../Core/Theme/JuntaPayColors.dart';
 import '../../../../Core/Services/Router/GetxRouter.dart';
 import '../../../../Core/Componentes/AppBar.dart';
 
 class ConfiguracoesPage extends StatelessWidget {
+  const ConfiguracoesPage({Key? key}) : super(key: key);
+
   ConfiguracoesController get controller => Get.find<ConfiguracoesController>();
 
   @override
@@ -33,7 +36,12 @@ class ConfiguracoesPage extends StatelessWidget {
                       [
                         ItemDaConfiguracaoWidget(
                           titleWidget: JuntaPayProWidget(),
-                          onTap: () {},
+                          onTap: () {
+                            JuntaPayBottomSheet.bottomSheet(
+                              title: 'Title',
+                              description: 'Decription',
+                            );
+                          },
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
