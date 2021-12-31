@@ -1,6 +1,8 @@
 import 'package:responsive_framework/responsive_wrapper.dart';
 
 class ScreenBreakpoints {
+  const ScreenBreakpoints._();
+  
   static const List<ResponsiveBreakpoint>? breakpoints = [
     ResponsiveBreakpoint.resize(350, name: MOBILE),
     ResponsiveBreakpoint.autoScale(600, name: TABLET),

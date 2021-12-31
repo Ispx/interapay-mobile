@@ -11,6 +11,8 @@ import 'Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'Services/LocalStorage/ILocalStorageService.dart';
 import 'Services/Router/GetxRouter.dart';
 import 'Services/Router/Router.dart';
+import '../Layers/Data/Database/IDatabase.dart';
+import '../Layers/Data/Database/Moor/SqliteDatabase.dart';
 
 class Initializer {
   const Initializer._();
@@ -22,7 +24,8 @@ class Initializer {
 
       if (kIsWeb == false) await _inicializarFirebaseCrashlytics();
 
-      await _adicionarServicosGlobais();
+      await _inicializarServicosGlobais();
+      await _inicializarDatabase();
 
       await Configuracoes.init();
     } catch (e) {
@@ -31,11 +34,17 @@ class Initializer {
     }
   }
 
-  static Future<void> _adicionarServicosGlobais() async {
+  static Future<void> _inicializarServicosGlobais() async {
     SharedPreferences _sharedPreferences = await SharedPreferences.getInstance();
     Get.lazyPut<ILocalStorageService>(() => SharedPreferencesLocalStorageService(_sharedPreferences));
 
     Get.lazyPut<JuntaPayRouter>(() => GetxJuntaPayRouter());
+  }
+
+  static Future<void> _inicializarDatabase() async {
+    var _databaseInstance = await SqliteDatabase.criarBancoDeDados();
+
+    Get.lazyPut<IDatabase>(() => _databaseInstance);
   }
 
   static Future<void> _inicializarFirebaseCrashlytics() async {

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../Core/Componentes/AssinaturaWidget.dart';
 import 'Widgets/JuntaPayProWidget.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
@@ -37,13 +36,11 @@ class ConfiguracoesPage extends StatelessWidget {
                       [
                         ItemDaConfiguracaoWidget(
                           titleWidget: const JuntaPayProWidget(),
-                          onTap: () {
-                            JuntaPayBottomSheet.showAssinaturas();
-                          },
+                          onTap: () => JuntaPayBottomSheet.showAssinaturas(),
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
-                          onTap: () {
+                          onTap: () async {
                             router.toMoedas();
                           },
                         ),
@@ -55,7 +52,7 @@ class ConfiguracoesPage extends StatelessWidget {
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto),
-                          onTap: () {
+                          onTap: () async {
                             router.toTemas();
                           },
                         ),

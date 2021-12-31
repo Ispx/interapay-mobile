@@ -4,15 +4,15 @@ import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
 import 'package:test/test.dart';
 
 main() {
-  final Pessoa pessoa = Pessoa(
+  final PessoaEntity pessoa = PessoaEntity(
     cpfCnpj: '428.379.635-26',
     nome: 'Teste',
     email: 'teste@email.com',
     telefone: '(21) 98359-7649',
-    tipo: TipoDePessoa.Fisica,
+    tipoDePessoa: TipoDePessoa.Fisica,
   );
 
-  ParticipanteDaDespesa participanteDaDespesa = ParticipanteDaDespesa(
+  ParticipanteDaDespesaEntity participanteDaDespesa = ParticipanteDaDespesaEntity(
     pessoa: pessoa,
     valorASerPago: 200,
   );
