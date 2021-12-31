@@ -1,40 +1,45 @@
+import 'package:get/get.dart';
+import 'package:juntapay/Core/Services/LocalStorage/ILocalStorageService.dart';
+import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test/test.dart';
 
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/ContaBancaria.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/InstituicaoBancaria.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/FormaDePagamento.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDeContaBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Configuracao.dart';
+import 'package:juntapay/Core/Configuracoes.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Comuns/ParticipanteDaDespesa.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/Despesa.dart';
 
 void main() {
-  List<ParticipanteDaDespesa> gerarAmigos() {
+  List<ParticipanteDaDespesaEntity> gerarAmigos() {
     return List.generate(
       5,
-      (i) => ParticipanteDaDespesa(
-        pessoa: Pessoa(cpfCnpj: '', nome: 'Amigo $i', tipo: TipoDePessoa.Fisica),
+      (i) => ParticipanteDaDespesaEntity(
+        pessoa: PessoaEntity(cpfCnpj: '', nome: 'Amigo $i', tipoDePessoa: TipoDePessoa.Fisica),
         valorASerPago: 100,
       ),
     );
   }
 
-  final ContaBancaria contaBancaria = ContaBancaria(
+  final ContaBancariaEntity contaBancaria = ContaBancariaEntity(
     agencia: 0,
-    instituicaoBancaria: InstituicaoBancaria(nome: 'Teste'),
+    instituicaoBancaria: InstituicaoBancariaEntity(nome: 'Teste'),
     nome: 'Nome',
     numeroDaConta: 000,
     tipo: TipoDeContaBancaria.Corrente,
-    titularDaConta: Pessoa(
+    titularDaConta: PessoaEntity(
       cpfCnpj: '',
       nome: 'Titular da Conta',
-      tipo: TipoDePessoa.Fisica,
+      tipoDePessoa: TipoDePessoa.Fisica,
     ),
   );
 
-  final Despesa despesa = Despesa(
+  final DespesaEntity despesa = DespesaEntity(
     valorTotal: 500.0,
     comprovante: 'teste',
     chavePix: 'chavePix',
@@ -44,7 +49,7 @@ void main() {
     amigos: gerarAmigos(),
   );
 
-  resetarDespesa() {
+  void resetarDespesa() {
     despesa.valorTotal = 500.0;
     despesa.comprovante = 'teste';
     despesa.chavePix = 'chavePix';
@@ -55,8 +60,21 @@ void main() {
     despesa.adicionarAmigos(gerarAmigos());
   }
 
-  setUpAll(() {
-    Configuracao.init();
+  setUpAll(() async {
+    
+    PackageInfo.setMockInitialValues(
+      appName: "JuntaPay",
+      buildNumber: "1",
+      packageName: "com.juntapay.juntapay",
+      version: "1.0.0",
+      buildSignature: "7A28888B19540485158F55FE53879A86101770AE",
+    );
+    
+    SharedPreferences.setMockInitialValues({});
+    var sharedPreferences = await SharedPreferences.getInstance();
+    await Get.putAsync<ILocalStorageService>(() async => SharedPreferencesLocalStorageService(sharedPreferences));
+
+    await Configuracoes.init();
   });
 
   test('Deve retornar um erro caso tenha menos de 1 amigo', () {

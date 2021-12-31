@@ -3,16 +3,16 @@ import '../Comuns/Pessoa.dart';
 import '../Comuns/PossuiId.dart';
 import 'InstituicaoBancaria.dart';
 
-class ContaBancaria extends PossuiId {
+class ContaBancariaEntity extends PossuiId {
   String nome;
   TipoDeContaBancaria tipo;
   String? observacao;
-  final Pessoa titularDaConta;
+  final PessoaEntity titularDaConta;
   final int agencia;
   final int numeroDaConta;
-  final InstituicaoBancaria instituicaoBancaria;
+  final InstituicaoBancariaEntity instituicaoBancaria;
 
-  ContaBancaria({
+  ContaBancariaEntity({
     String? id,
     required this.nome,
     required this.tipo,

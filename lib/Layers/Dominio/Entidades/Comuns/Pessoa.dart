@@ -2,23 +2,27 @@ import '../../../../Core/Helpers/JuntaUtils.dart';
 import '../../Enums/Financas/TipoDePessoa.dart';
 import 'PossuiId.dart';
 
-class Pessoa extends PossuiId {
+class PessoaEntity extends PossuiId {
   final String nome;
   final String? email;
   final String? telefone;
   final String cpfCnpj;
   final String? observacao;
-  final TipoDePessoa tipo;
+  final TipoDePessoa tipoDePessoa;
+  late final DateTime dataDeCriacao;
 
-  Pessoa({
+  PessoaEntity({
     String? id,
     required this.nome,
     this.email,
     this.telefone,
     required this.cpfCnpj,
     this.observacao,
-    required this.tipo,
-  }) : super(id: id);
+    required this.tipoDePessoa,
+    DateTime? dataDeCriacao,
+  }) : super(id: id) {
+    this.dataDeCriacao = dataDeCriacao ?? DateTime.now();
+  }
 
   //TODO: Criar a validação de telefone
   bool get emailEhValido => JuntaPayUtils.isNotEmpty(email) ? JuntaPayUtils.isValidEmail(email!) : false;
@@ -27,5 +31,5 @@ class Pessoa extends PossuiId {
 
   //TODO: Criar a formatação de telefone
   String get cpfCnpjFormatado => JuntaPayUtils.formatarCpfCnpj(cpfCnpj);
-  String get telefoneFormatado =>  throw UnimplementedError();
+  String get telefoneFormatado => throw UnimplementedError();
 }
