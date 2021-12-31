@@ -1,0 +1,1 @@
+enum Planos { Mensal, Anual }

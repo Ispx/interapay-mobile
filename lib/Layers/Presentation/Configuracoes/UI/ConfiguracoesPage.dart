@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../Core/Componentes/AssinaturaWidget.dart';
+import 'Widgets/JuntaPayProWidget.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
 import '../Controllers/ConfiguracoesController.dart';
+import '../../../../Core/Services/JuntaPay/JuntaPayBottomSheet.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../../../../Core/Theme/JuntaPayColors.dart';
 import '../../../../Core/Services/Router/GetxRouter.dart';
 import '../../../../Core/Componentes/AppBar.dart';
 
 class ConfiguracoesPage extends StatelessWidget {
+  const ConfiguracoesPage({Key? key}) : super(key: key);
+
   ConfiguracoesController get controller => Get.find<ConfiguracoesController>();
 
   @override
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Configurações'),
+        appBar: const JuntaPayAppBar(title: 'Configurações'),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: EdgeInsets.only(top: 10, bottom: MediaQuery.of(context).padding.bottom),
             child: Column(
@@ -27,9 +32,15 @@ class ConfiguracoesPage extends StatelessWidget {
                   color: Colors.white,
                   child: ListView.custom(
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     childrenDelegate: SliverChildListDelegate.fixed(
                       [
+                        ItemDaConfiguracaoWidget(
+                          titleWidget: const JuntaPayProWidget(),
+                          onTap: () {
+                            JuntaPayBottomSheet.showAssinaturas();
+                          },
+                        ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
                           onTap: () {
@@ -64,7 +75,7 @@ class ConfiguracoesPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Container(
                   color: Colors.white,
                   child: ListView.custom(
@@ -75,9 +86,9 @@ class ConfiguracoesPage extends StatelessWidget {
                         ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Sobre')),
                         ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
                         ItemDaConfiguracaoWidget.withColor(
-                          ItemDaConfiguracao('Sair'),
-                          JuntaPayColors.error,
-                          onTap: ()=> controller.sairDaConta(),
+                          configuracao: ItemDaConfiguracao('Sair'),
+                          color: JuntaPayColors.error,
+                          onTap: () => controller.sairDaConta(),
                         ),
                       ],
                     ),
