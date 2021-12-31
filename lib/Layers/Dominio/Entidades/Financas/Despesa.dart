@@ -7,8 +7,8 @@ import '../Comuns/PossuiId.dart';
 import '../../Enums/Comuns/Assinatura.dart';
 import '../../Enums/Financas/FormaDePagamento.dart';
 
-class Despesa extends PossuiId {
-  Despesa({
+class DespesaEntity extends PossuiId {
+  DespesaEntity({
     String? id,
     required this.valorTotal,
     this.formaDePagamento = FormaDePagamento.Pix,
@@ -17,25 +17,25 @@ class Despesa extends PossuiId {
     this.obrigarComprovante = true,
     this.observacoes,
     this.comprovante,
-    List<ParticipanteDaDespesa>? amigos,
+    List<ParticipanteDaDespesaEntity>? amigos,
   }) : super(id: id) {
     _amigos = amigos ?? [];
   }
 
   double valorTotal;
   FormaDePagamento formaDePagamento;
-  ContaBancaria? contaBancaria;
+  ContaBancariaEntity? contaBancaria;
   String? chavePix;
   bool obrigarComprovante;
   String? comprovante;
   String? observacoes;
   final DateTime dataDeCriacao = DateTime.now();
 
-  late final List<ParticipanteDaDespesa> _amigos;
-  List<ParticipanteDaDespesa> get amigos => _amigos;
+  late final List<ParticipanteDaDespesaEntity> _amigos;
+  List<ParticipanteDaDespesaEntity> get amigos => _amigos;
 
-  void adicionarAmigo(ParticipanteDaDespesa amigo) => _amigos.add(amigo);
-  void adicionarAmigos(List<ParticipanteDaDespesa> amigos) => _amigos.addAll(amigos);
+  void adicionarAmigo(ParticipanteDaDespesaEntity amigo) => _amigos.add(amigo);
+  void adicionarAmigos(List<ParticipanteDaDespesaEntity> amigos) => _amigos.addAll(amigos);
 
   ValidacaoComMensagem validar() {
     ValidacaoComMensagem validacao = ValidacaoComMensagem.valido();
@@ -61,7 +61,7 @@ class Despesa extends PossuiId {
     if (valorTotal <= 0.0) validacao = ValidacaoComMensagem.invalido('Informe um valor total maior que zero');
 
     for (var i = 0; i < amigos.length; i++) {
-      ParticipanteDaDespesa _amigo = amigos[i];
+      ParticipanteDaDespesaEntity _amigo = amigos[i];
 
       bool valido = _amigo.validar().valido;
 

@@ -16,30 +16,30 @@ import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
 import 'package:juntapay/Layers/Dominio/Entidades/Financas/Despesa.dart';
 
 void main() {
-  List<ParticipanteDaDespesa> gerarAmigos() {
+  List<ParticipanteDaDespesaEntity> gerarAmigos() {
     return List.generate(
       5,
-      (i) => ParticipanteDaDespesa(
-        pessoa: Pessoa(cpfCnpj: '', nome: 'Amigo $i', tipo: TipoDePessoa.Fisica),
+      (i) => ParticipanteDaDespesaEntity(
+        pessoa: PessoaEntity(cpfCnpj: '', nome: 'Amigo $i', tipoDePessoa: TipoDePessoa.Fisica),
         valorASerPago: 100,
       ),
     );
   }
 
-  final ContaBancaria contaBancaria = ContaBancaria(
+  final ContaBancariaEntity contaBancaria = ContaBancariaEntity(
     agencia: 0,
-    instituicaoBancaria: InstituicaoBancaria(nome: 'Teste'),
+    instituicaoBancaria: InstituicaoBancariaEntity(nome: 'Teste'),
     nome: 'Nome',
     numeroDaConta: 000,
     tipo: TipoDeContaBancaria.Corrente,
-    titularDaConta: Pessoa(
+    titularDaConta: PessoaEntity(
       cpfCnpj: '',
       nome: 'Titular da Conta',
-      tipo: TipoDePessoa.Fisica,
+      tipoDePessoa: TipoDePessoa.Fisica,
     ),
   );
 
-  final Despesa despesa = Despesa(
+  final DespesaEntity despesa = DespesaEntity(
     valorTotal: 500.0,
     comprovante: 'teste',
     chavePix: 'chavePix',

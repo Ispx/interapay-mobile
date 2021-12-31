@@ -1,9 +1,9 @@
 import '../../../../Core/Helpers/ValidacaoComMensagem.dart';
 import 'Pessoa.dart';
 
-class ParticipanteDaDespesa extends Pessoa {
-  ParticipanteDaDespesa({
-    required Pessoa pessoa,
+class ParticipanteDaDespesaEntity extends PessoaEntity {
+  ParticipanteDaDespesaEntity({
+    required PessoaEntity pessoa,
     required this.valorASerPago,
   }) : super(
           id: pessoa.id,
@@ -12,7 +12,7 @@ class ParticipanteDaDespesa extends Pessoa {
           telefone: pessoa.telefone,
           cpfCnpj: pessoa.cpfCnpj,
           observacao: pessoa.observacao,
-          tipo: pessoa.tipo,
+          tipoDePessoa: pessoa.tipoDePessoa,
         );
 
   double valorASerPago;

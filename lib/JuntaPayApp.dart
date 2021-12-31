@@ -7,6 +7,7 @@ import 'Core/Routes.dart';
 import 'Core/Services/Theme/ThemeService.dart';
 import 'Core/Theme/JuntaPayTheme.dart';
 import 'Layers/Dominio/Enums/Comuns/Tema.dart';
+import 'Layers/Data/Database/Moor/SqliteDatabase.dart';
 
 class JuntaPayApp extends StatefulWidget {
   const JuntaPayApp({required this.initialRoute});
@@ -51,6 +52,7 @@ class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
           : ThemeMode.system,
       theme: JuntaPayTheme.light,
       darkTheme: JuntaPayTheme.dark,
+      onDispose: () async => await database.close(),
       builder: (context, child) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(
           context,

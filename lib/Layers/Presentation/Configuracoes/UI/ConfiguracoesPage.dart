@@ -40,7 +40,7 @@ class ConfiguracoesPage extends StatelessWidget {
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
-                          onTap: () {
+                          onTap: () async {
                             router.toMoedas();
                           },
                         ),
@@ -52,7 +52,7 @@ class ConfiguracoesPage extends StatelessWidget {
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto),
-                          onTap: () {
+                          onTap: () async {
                             router.toTemas();
                           },
                         ),
