@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:juntapay/Core/Theme/JuntaPayFont.dart';
 
+import 'Widgets/JuntaPayProWidget.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
 import '../Controllers/ConfiguracoesController.dart';
@@ -31,6 +31,10 @@ class ConfiguracoesPage extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     childrenDelegate: SliverChildListDelegate.fixed(
                       [
+                        ItemDaConfiguracaoWidget(
+                          titleWidget: JuntaPayProWidget(),
+                          onTap: () {},
+                        ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
                           onTap: () {
