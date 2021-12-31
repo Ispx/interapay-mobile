@@ -4,3 +4,4 @@ export 'Moedas/Controllers/MoedasController.dart';
 export 'Temas/Controllers/TemasController.dart';
 export 'TiposDeSeguranca/Controllers/TiposDeSegurancaController.dart';
 export 'Notificacoes/Controllers/NotificacoesController.dart';
+export 'Configuracoes/Sub-Pages/Sobre/Controllers/SobreController.dart';

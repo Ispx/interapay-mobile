@@ -16,6 +16,7 @@ class JuntaPayRoutes {
   static const TEMAS = '$CONFIGURACOES/temas';
   static const TIPOS_DE_SEGURANCA = '$CONFIGURACOES/tiposdeseguranca';
   static const NOTIFICACOES = '$CONFIGURACOES/notificacoes';
+  static const SOBRE = '$CONFIGURACOES/sobre';
 
   static List<GetPage> get routes => [
         GetPage(
@@ -47,10 +48,15 @@ class JuntaPayRoutes {
           page: () => TiposDeSegurancaPage(),
           binding: TiposDeSegurancaBinding(),
         ),
-         GetPage(
+        GetPage(
           name: NOTIFICACOES,
           page: () => NotificacoesPage(),
           binding: NotificacoesBinding(),
+        ),
+        GetPage(
+          name: SOBRE,
+          page: () => SobrePage(),
+          binding: SobreBinding(),
         ),
       ];
 }

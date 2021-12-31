@@ -46,8 +46,9 @@ class SqliteDatabase extends _$SqliteDatabase implements IDatabase {
 
   static Future<SqliteDatabase> criarBancoDeDados() async {
     await init();
-
-    await _instance!.createMigrator().createAll();
+    // A função abaixo deve ser descomentada quando tiver o login pronto.
+    // Ao efetuar login, chamar o criarBancoDeDados.
+    // await _instance!.createMigrator().createAll();
 
     return _instance!;
   }

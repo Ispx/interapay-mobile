@@ -4,3 +4,4 @@ export 'Moedas/Bindings/MoedasBinding.dart';
 export 'Temas/Bindings/TemasBinding.dart';
 export 'TiposDeSeguranca/Bindings/TiposDeSegurancaBinding.dart';
 export 'Notificacoes/Bindings/NotificacoesBinding.dart';
+export 'Configuracoes/Sub-Pages/Sobre/Bindings/SobreBinding.dart';

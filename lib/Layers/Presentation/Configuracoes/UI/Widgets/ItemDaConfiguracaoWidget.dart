@@ -12,12 +12,10 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
     this.onTap,
     this.titleWidget,
     this.valueWidget,
+    this.showArrow,
     Key? key,
   })  : assert(() {
-          if (configuracao == null && titleWidget == null) {
-            throw FlutterError("title 1");
-          }
-
+          if (configuracao == null && titleWidget == null) throw FlutterError("Configuração não pode ser nulo");
           return true;
         }()),
         super(key: key);
@@ -28,6 +26,7 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
     void Function()? onTap,
     Widget? titleWidget,
     Widget? valueWidget,
+    bool? showArrow,
   }) =>
       ItemDaConfiguracaoWidget(
         configuracao: configuracao,
@@ -36,6 +35,7 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
         onTap: onTap,
         titleWidget: titleWidget,
         valueWidget: valueWidget,
+        showArrow: showArrow,
       );
 
   final ItemDaConfiguracao? configuracao;
@@ -50,6 +50,9 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
   /// Usado para substituir o texto no "value" do item
   final Widget? valueWidget;
 
+  /// Usado para visibilidade da seta
+  final bool? showArrow;
+
   @override
   Widget build(BuildContext context) {
     return CardItemWidget(
@@ -58,8 +61,9 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           titleWidget ??
+              titleWidget ??
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Text(
                   configuracao!.title,
                   maxLines: 2,
@@ -70,10 +74,10 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
                   ),
                 ),
               ),
-          SizedBox(width: 5),
+          const SizedBox(width: 5),
           if (valueWidget == null) ...{
             Flexible(
-              flex: 4,
+              flex: 2,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -88,12 +92,14 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
                         style: TextStyle(fontSize: 18, color: JuntaPayColors.baseDark25),
                       ),
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                   },
-                  Icon(
-                    Icons.arrow_forward_ios_rounded,
-                    color: iconColor ?? Theme.of(context).primaryColor,
-                  )
+                  if (onTap != null || showArrow == true) ...{
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      color: iconColor ?? Theme.of(context).primaryColor,
+                    )
+                  }
                 ],
               ),
             ),

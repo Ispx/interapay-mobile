@@ -5,3 +5,4 @@ export 'Moedas/UI/MoedasPage.dart';
 export 'Temas/UI/TemasPage.dart';
 export 'TiposDeSeguranca/UI/TiposDeSegurancaPage.dart';
 export 'Notificacoes/UI/NotificacoesPage.dart';
+export 'Configuracoes/Sub-Pages/Sobre/UI/SobrePage.dart';

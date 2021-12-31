@@ -40,33 +40,23 @@ class ConfiguracoesPage extends StatelessWidget {
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moeda', value: Configuracoes.siglaMoedaTexto),
-                          onTap: () async {
-                            router.toMoedas();
-                          },
+                          onTap: () => router.toMoedas(),
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Linguagem', value: Configuracoes.linguagemTexto),
-                          onTap: () {
-                            router.toLinguagens();
-                          },
+                          onTap: () => router.toLinguagens(),
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Tema', value: Configuracoes.temaTexto),
-                          onTap: () async {
-                            router.toTemas();
-                          },
+                          onTap: () => router.toTemas(),
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Segurança', value: Configuracoes.tipoDeSegurancaTexto ?? 'Não definido'),
-                          onTap: () {
-                            router.toTiposDeSeguranca();
-                          },
+                          onTap: () => router.toTiposDeSeguranca(),
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Notificação'),
-                          onTap: () {
-                            router.toNotificacoes();
-                          },
+                          onTap: () => router.toNotificacoes(),
                         ),
                       ],
                     ),
@@ -80,7 +70,10 @@ class ConfiguracoesPage extends StatelessWidget {
                     physics: NeverScrollableScrollPhysics(),
                     childrenDelegate: SliverChildListDelegate.fixed(
                       [
-                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Sobre')),
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Sobre'),
+                          onTap: () => router.toSobre(),
+                        ),
                         ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
                         ItemDaConfiguracaoWidget.withColor(
                           configuracao: ItemDaConfiguracao('Sair'),
