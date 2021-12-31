@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:juntapay/Core/Theme/JuntaPayFont.dart';
 
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
@@ -75,9 +76,9 @@ class ConfiguracoesPage extends StatelessWidget {
                         ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Sobre')),
                         ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
                         ItemDaConfiguracaoWidget.withColor(
-                          ItemDaConfiguracao('Sair'),
-                          JuntaPayColors.error,
-                          onTap: ()=> controller.sairDaConta(),
+                          configuracao: ItemDaConfiguracao('Sair'),
+                          color: JuntaPayColors.error,
+                          onTap: () => controller.sairDaConta(),
                         ),
                       ],
                     ),

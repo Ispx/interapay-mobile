@@ -10,6 +10,7 @@ class ConfiguracoesController extends GetxController {
         ) ??
         false;
 
-    // if(sair == true)//TODO: Criar o logout
+    //TODO: Criar o logout
+    if (sair == true) print('efetuar logout');
   }
 }
