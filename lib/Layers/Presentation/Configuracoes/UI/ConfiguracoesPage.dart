@@ -74,7 +74,10 @@ class ConfiguracoesPage extends StatelessWidget {
                           configuracao: ItemDaConfiguracao('Sobre'),
                           onTap: () => router.toSobre(),
                         ),
-                        ItemDaConfiguracaoWidget(configuracao: ItemDaConfiguracao('Ajuda')),
+                        ItemDaConfiguracaoWidget(
+                          configuracao: ItemDaConfiguracao('Ajuda'),
+                          onTap: () => controller.enviarEmailOuWhatsappParaSuporte(),
+                        ),
                         ItemDaConfiguracaoWidget.withColor(
                           configuracao: ItemDaConfiguracao('Sair'),
                           color: JuntaPayColors.error,

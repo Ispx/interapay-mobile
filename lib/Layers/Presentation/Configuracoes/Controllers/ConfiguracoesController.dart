@@ -13,4 +13,8 @@ class ConfiguracoesController extends GetxController {
     //TODO: Criar o logout
     if (sair == true) print('efetuar logout');
   }
+
+  void enviarEmailOuWhatsappParaSuporte() {
+    //TODO: Criar implementação para enviar e-mail ou Whatsapp para o suporte.
+  }
 }
