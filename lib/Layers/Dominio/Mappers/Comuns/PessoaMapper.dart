@@ -26,7 +26,7 @@ class PessoaMapper extends IMapper {
       'email': entity.email,
       'telefone': entity.telefone,
       'observacao': entity.observacao,
-      'dataDeCriacao': entity.dataDeCriacao,
+      'dataDeCriacao': entity.dataDeCriacao.toIso8601String(),
     };
   }
 

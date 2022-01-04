@@ -16,6 +16,8 @@ class CrudBasicoDriftDao<TEntidade extends DataClass> extends DatabaseAccessor<D
     switch (TEntidade) {
       case Pessoa:
         return db.pessoas;
+        case ContaBancaria:
+        return db.contasBancarias;
     }
 
     throw AssertionError('Tabela não encontrada');

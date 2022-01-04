@@ -10,7 +10,8 @@ class ContaBancariaEntity extends PossuiId {
   final PessoaEntity titularDaConta;
   final int agencia;
   final int numeroDaConta;
-  final InstituicaoBancariaEntity instituicaoBancaria;
+  final InstituicaoBancaria instituicaoBancaria;
+  late final DateTime dataDeCriacao;
 
   ContaBancariaEntity({
     String? id,
@@ -21,6 +22,8 @@ class ContaBancariaEntity extends PossuiId {
     required this.agencia,
     required this.numeroDaConta,
     required this.instituicaoBancaria,
-  }) : super(id: id);
+    DateTime? dataDeCriacao,
+  }) : super(id: id) {
+    this.dataDeCriacao = dataDeCriacao ?? DateTime.now();
+  }
 }
-

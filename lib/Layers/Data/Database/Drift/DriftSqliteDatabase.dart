@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:get/get.dart' as getx;
 
 import '../IDatabase.dart';
+import 'DAOs/Comuns/ContasBancariasDao.dart';
 import 'DAOs/Comuns/PessoasDao.dart';
 import 'Tables/Tables.dart';
 
@@ -32,6 +33,7 @@ Future<LazyDatabase> _openConnection([bool inMemory = false]) async {
   ],
   daos: [
     PessoasDao,
+    ContasBancariasDao,
   ],
 )
 class DriftSqliteDatabase extends _$DriftSqliteDatabase implements IDatabase {

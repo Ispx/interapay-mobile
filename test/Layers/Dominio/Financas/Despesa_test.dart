@@ -28,7 +28,7 @@ void main() {
 
   final ContaBancariaEntity contaBancaria = ContaBancariaEntity(
     agencia: 0,
-    instituicaoBancaria: InstituicaoBancariaEntity(nome: 'Teste'),
+    instituicaoBancaria: InstituicaoBancaria.BancoDoBrasil,
     nome: 'Nome',
     numeroDaConta: 000,
     tipo: TipoDeContaBancaria.Corrente,

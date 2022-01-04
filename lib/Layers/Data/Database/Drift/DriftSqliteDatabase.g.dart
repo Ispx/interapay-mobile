@@ -1792,6 +1792,8 @@ abstract class _$DriftSqliteDatabase extends GeneratedDatabase {
   late final $ParticipantesDaDespesaTable participantesDaDespesa =
       $ParticipantesDaDespesaTable(this);
   late final PessoasDao pessoasDao = PessoasDao(this as DriftSqliteDatabase);
+  late final ContasBancariasDao contasBancariasDao =
+      ContasBancariasDao(this as DriftSqliteDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
