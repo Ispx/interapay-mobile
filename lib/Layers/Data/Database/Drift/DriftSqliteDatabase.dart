@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:get/get.dart' as getx;
 
 import '../IDatabase.dart';
-import 'DAOs/PessoasDao.dart';
+import 'DAOs/Comuns/PessoasDao.dart';
 import 'Tables/Tables.dart';
 
 part 'DriftSqliteDatabase.g.dart';

@@ -1,10 +1,9 @@
-import 'package:juntapay/Layers/Dominio/Mappers/Comuns/PessoaMapper.dart';
 import 'package:test/test.dart';
 
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
 import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
-import 'package:juntapay/Layers/Data/Database/Drift/DAOs/PessoasDao.dart';
+import 'package:juntapay/Layers/Data/Database/Drift/DAOs/Comuns/PessoasDao.dart';
 import 'package:juntapay/Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
+import 'package:uuid/uuid.dart';
 
 void main() {
   late DriftSqliteDatabase database;
@@ -44,18 +43,20 @@ void main() {
   });
 
   test('Deve inserir ou alterar a pessoa no banco de dados', () async {
-    final PessoaEntity _pessoa = PessoaEntity(
+    final Pessoa _pessoa = Pessoa(
+      id: Uuid().v4(),
       nome: 'Vinicius Veras',
       email: 'vinicius@vvssistemas.com.br',
       cpfCnpj: '09034357724',
       telefone: '21983597649',
-      tipoDePessoa: TipoDePessoa.Fisica,
+      tipoDePessoa: TipoDePessoa.Fisica.index,
+      dataDeCriacao: DateTime.now(),
     );
 
     pessoaCriada = pessoaCriada.copyWith(email: 'alterado@test.com');
 
     await dao.inserirOuAlterar(_pessoa);
-    await dao.inserirOuAlterar(PessoaMapper.fromTable(pessoaCriada));
+    await dao.inserirOuAlterar(pessoaCriada);
 
     var pessoas = await dao.obter();
 
