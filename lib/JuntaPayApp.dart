@@ -7,7 +7,7 @@ import 'Core/Routes.dart';
 import 'Core/Services/Theme/ThemeService.dart';
 import 'Core/Theme/JuntaPayTheme.dart';
 import 'Layers/Dominio/Enums/Comuns/Temas.dart';
-import 'Layers/Data/Database/Moor/SqliteDatabase.dart';
+import 'Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
 
 class JuntaPayApp extends StatefulWidget {
   const JuntaPayApp({required this.initialRoute});

@@ -12,7 +12,7 @@ import 'Services/LocalStorage/ILocalStorageService.dart';
 import 'Services/Router/GetxRouter.dart';
 import 'Services/Router/Router.dart';
 import '../Layers/Data/Database/IDatabase.dart';
-import '../Layers/Data/Database/Moor/SqliteDatabase.dart';
+import '../Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
 
 class Initializer {
   const Initializer._();
@@ -42,7 +42,7 @@ class Initializer {
   }
 
   static Future<void> _inicializarDatabase() async {
-    var _databaseInstance = await SqliteDatabase.criarBancoDeDados();
+    var _databaseInstance = await DriftSqliteDatabase.criarBancoDeDados();
 
     Get.lazyPut<IDatabase>(() => _databaseInstance);
   }

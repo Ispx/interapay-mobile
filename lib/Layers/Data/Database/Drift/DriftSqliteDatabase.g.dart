@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'SqliteDatabase.dart';
+part of 'DriftSqliteDatabase.dart';
 
 // **************************************************************************
 // MoorGenerator
@@ -1781,8 +1781,9 @@ class $ParticipantesDaDespesaTable extends ParticipantesDaDespesa
   }
 }
 
-abstract class _$SqliteDatabase extends GeneratedDatabase {
-  _$SqliteDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
+abstract class _$DriftSqliteDatabase extends GeneratedDatabase {
+  _$DriftSqliteDatabase(QueryExecutor e)
+      : super(SqlTypeSystem.defaultInstance, e);
   late final $ComprovantesTable comprovantes = $ComprovantesTable(this);
   late final $PessoasTable pessoas = $PessoasTable(this);
   late final $ContasBancariasTable contasBancarias =
@@ -1790,6 +1791,7 @@ abstract class _$SqliteDatabase extends GeneratedDatabase {
   late final $DespesasTable despesas = $DespesasTable(this);
   late final $ParticipantesDaDespesaTable participantesDaDespesa =
       $ParticipantesDaDespesaTable(this);
+  late final PessoasDao pessoasDao = PessoasDao(this as DriftSqliteDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override

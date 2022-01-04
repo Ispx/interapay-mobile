@@ -6,14 +6,17 @@ import 'package:path_provider/path_provider.dart';
 import 'package:get/get.dart' as getx;
 
 import '../IDatabase.dart';
+import 'DAOs/PessoasDao.dart';
 import 'Tables/Tables.dart';
 
-part 'SqliteDatabase.g.dart';
+part 'DriftSqliteDatabase.g.dart';
 
-Future<LazyDatabase> _openConnection() async {
+Future<LazyDatabase> _openConnection([bool inMemory = false]) async {
   return LazyDatabase(() async {
+    if (inMemory == true) return NativeDatabase.memory(logStatements: false);
+
     final Directory folder = await getApplicationDocumentsDirectory();
-    final File file = File(p.join(folder.path, '${SqliteDatabase.DATABASE_NAME}.sqlite'));
+    final File file = File(p.join(folder.path, '${DriftSqliteDatabase.DATABASE_NAME}.sqlite'));
 
     return NativeDatabase(file, logStatements: true);
   });
@@ -27,24 +30,27 @@ Future<LazyDatabase> _openConnection() async {
     ParticipantesDaDespesa,
     Pessoas,
   ],
+  daos: [
+    PessoasDao,
+  ],
 )
-class SqliteDatabase extends _$SqliteDatabase implements IDatabase {
-  SqliteDatabase._(LazyDatabase database) : super(database);
+class DriftSqliteDatabase extends _$DriftSqliteDatabase implements IDatabase {
+  DriftSqliteDatabase._(LazyDatabase database) : super(database);
 
-  static SqliteDatabase? _instance;
+  static DriftSqliteDatabase? _instance;
 
   static const VERSION = 1;
   static const DATABASE_NAME = 'juntapay';
 
-  static Future<SqliteDatabase> init() async {
-    var _connection = await _openConnection();
+  static Future<DriftSqliteDatabase> init({bool inMemory = false}) async {
+    var _connection = await _openConnection(inMemory);
 
-    _instance ??= SqliteDatabase._(_connection);
+    _instance ??= DriftSqliteDatabase._(_connection);
 
     return _instance!;
   }
 
-  static Future<SqliteDatabase> criarBancoDeDados() async {
+  static Future<DriftSqliteDatabase> criarBancoDeDados() async {
     await init();
     // A função abaixo deve ser descomentada quando tiver o login pronto.
     // Ao efetuar login, chamar o criarBancoDeDados.

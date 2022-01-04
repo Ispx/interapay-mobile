@@ -1,9 +1,7 @@
-import '../../../Data/Database/Moor/SqliteDatabase.dart';
+import '../../../Data/Database/Drift/DriftSqliteDatabase.dart';
 import '../../Entidades/Comuns/Pessoa.dart';
 import '../../Enums/Financas/TipoDePessoa.dart';
 import '../IMapper.dart';
-
-
 
 class PessoaMapper extends IMapper {
   static PessoaEntity fromMap(Map<String, dynamic> map) {

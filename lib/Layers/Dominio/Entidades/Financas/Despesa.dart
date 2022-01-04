@@ -18,8 +18,10 @@ class DespesaEntity extends PossuiId {
     this.observacoes,
     this.comprovante,
     List<ParticipanteDaDespesaEntity>? amigos,
+    DateTime? dataDeCriacao,
   }) : super(id: id) {
     _amigos = amigos ?? [];
+    this.dataDeCriacao = dataDeCriacao ?? DateTime.now();
   }
 
   double valorTotal;
@@ -29,7 +31,7 @@ class DespesaEntity extends PossuiId {
   bool obrigarComprovante;
   String? comprovante;
   String? observacoes;
-  final DateTime dataDeCriacao = DateTime.now();
+  late final DateTime dataDeCriacao;
 
   late final List<ParticipanteDaDespesaEntity> _amigos;
   List<ParticipanteDaDespesaEntity> get amigos => _amigos;

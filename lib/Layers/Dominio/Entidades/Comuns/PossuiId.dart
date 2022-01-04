@@ -1,6 +1,8 @@
 import 'package:uuid/uuid.dart';
 
-class PossuiId<T> {
+import 'Entidade.dart';
+
+class PossuiId extends Entidade {
   late final String _id;
   String get id => _id;
 
@@ -12,3 +14,4 @@ class PossuiId<T> {
     _id = id ?? Uuid().v4();
   }
 }
+
