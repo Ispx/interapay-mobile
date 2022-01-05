@@ -1,4 +1,4 @@
-![](https://github.com/bernardoveras/interapay/blob/master/.github/assets/cover.png)
+![](https://github.com/bernardoveras/interapay/blob/main/.github/assets/cover.png)
 
 ---
 
