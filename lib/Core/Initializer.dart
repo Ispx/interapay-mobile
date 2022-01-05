@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Configuracoes.dart';
@@ -26,6 +27,7 @@ class Initializer {
 
       await _inicializarServicosGlobais();
       await _inicializarDatabase();
+      await _inicializarGoogleAds();
 
       await Configuracoes.init();
     } catch (e) {
@@ -38,7 +40,7 @@ class Initializer {
     SharedPreferences _sharedPreferences = await SharedPreferences.getInstance();
     Get.lazyPut<ILocalStorageService>(() => SharedPreferencesLocalStorageService(_sharedPreferences));
 
-    Get.lazyPut<JuntaPayRouter>(() => GetxJuntaPayRouter());
+    Get.lazyPut<InteraPayRouter>(() => GetxInteraPayRouter());
   }
 
   static Future<void> _inicializarDatabase() async {
@@ -51,5 +53,9 @@ class Initializer {
     await Firebase.initializeApp();
 
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+  }
+
+  static Future<void> _inicializarGoogleAds() async {
+    await MobileAds.instance.initialize();
   }
 }

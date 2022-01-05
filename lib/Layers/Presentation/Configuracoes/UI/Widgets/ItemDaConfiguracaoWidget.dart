@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Componentes/CardItemWidget.dart';
-import '../../../../../Core/Theme/JuntaPayColors.dart';
+import '../../../../../Core/Theme/InteraPayColors.dart';
 import '../../ItemDaConfiguracao.dart';
 
 class ItemDaConfiguracaoWidget extends StatelessWidget {
@@ -70,7 +70,7 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 18,
-                    color: foregroundColor ?? JuntaPayColors.baseDark75,
+                    color: foregroundColor ?? InteraPayColors.baseDark75,
                   ),
                 ),
               ),
@@ -89,7 +89,7 @@ class ItemDaConfiguracaoWidget extends StatelessWidget {
                         maxLines: 2,
                         textAlign: TextAlign.end,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(fontSize: 18, color: JuntaPayColors.baseDark25),
+                        style: TextStyle(fontSize: 18, color: InteraPayColors.baseDark25),
                       ),
                     ),
                     const SizedBox(width: 5),

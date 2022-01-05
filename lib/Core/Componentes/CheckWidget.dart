@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 
-import '../Theme/JuntaPayColors.dart';
+import '../Theme/InteraPayColors.dart';
 
 class CheckWidget extends StatelessWidget {
   const CheckWidget({required this.checked, Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class CheckWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: checked == true ? Theme.of(context).primaryColor : Colors.transparent,
         shape: BoxShape.circle,
-        border: checked == false ? Border.all(color: JuntaPayColors.baseDark10) : null,
+        border: checked == false ? Border.all(color: InteraPayColors.baseDark10) : null,
       ),
       child: checked == true
           ? Icon(

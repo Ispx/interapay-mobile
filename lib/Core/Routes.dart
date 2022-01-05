@@ -2,10 +2,10 @@ import 'package:get/get.dart';
 import '../Layers/Presentation/_pages.dart';
 import '../Layers/Presentation/_bindings.dart';
 
-class JuntaPayRoutes {
-  JuntaPayRoutes._();
+class InteraPayRoutes {
+  InteraPayRoutes._();
 
-  static String get initialRoute => CONFIGURACOES;
+  static String get initialRoute => HOME;
 
   static const SPLASH = '/';
   static const LOGIN = '/login';

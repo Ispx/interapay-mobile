@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../Layers/Presentation/Configuracoes/UI/Widgets/PlanoWidget.dart';
 import '../../Layers/Presentation/Configuracoes/UI/Widgets/ItemBeneficioWidget.dart';
-import 'Icons/JuntaPayIcons.dart';
-import '../Theme/JuntaPayColors.dart';
-import '../Theme/JuntaPayFont.dart';
+import 'Icons/InteraPayIcons.dart';
+import '../Theme/InteraPayColors.dart';
+import '../Theme/InteraPayFont.dart';
 import '../../Layers/Dominio/Enums/Comuns/Planos.dart';
 
 class AssinaturaWidget extends StatelessWidget {
@@ -22,24 +22,24 @@ class AssinaturaWidget extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: JuntaPayColors.primary20,
+                color: InteraPayColors.primary20,
                 borderRadius: BorderRadius.circular(16),
               ),
               height: 60,
               width: 60,
               child: Icon(
-                JuntaPayIcons.diamond,
+                InteraPayIcons.diamond,
                 color: Theme.of(context).primaryColor,
                 size: 30,
               ),
             ),
             const SizedBox(height: 20),
             Text(
-              'Assine o JuntaPay Pro',
+              'Assine o InteraPay Pro',
               style: TextStyle(
                 fontSize: 20,
-                color: JuntaPayColors.baseDark100,
-                fontWeight: JuntaPayFont.bold,
+                color: InteraPayColors.baseDark100,
+                fontWeight: InteraPayFont.bold,
               ),
             ),
             const SizedBox(height: 20),
@@ -60,7 +60,7 @@ class AssinaturaWidget extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Divider(
-              color: JuntaPayColors.baseDark10,
+              color: InteraPayColors.baseDark10,
               height: 1,
               thickness: 1,
             ),
@@ -70,11 +70,11 @@ class AssinaturaWidget extends StatelessWidget {
               text: TextSpan(
                 style: TextStyle(
                   fontSize: 16.0,
-                  color: JuntaPayColors.textGray,
-                  fontWeight: JuntaPayFont.medium,
+                  color: InteraPayColors.textGray,
+                  fontWeight: InteraPayFont.medium,
                 ),
                 children: <TextSpan>[
-                  const TextSpan(text: 'Se você escolher o JuntaPay Pro agora, você terá '),
+                  const TextSpan(text: 'Se você escolher o InteraPay Pro agora, você terá '),
                   TextSpan(
                     text: '7 dias de avaliaçao grátis!',
                     style: TextStyle(
@@ -92,8 +92,8 @@ class AssinaturaWidget extends StatelessWidget {
               'ou',
               style: TextStyle(
                 fontSize: 16.0,
-                color: JuntaPayColors.textGray,
-                fontWeight: JuntaPayFont.medium,
+                color: InteraPayColors.textGray,
+                fontWeight: InteraPayFont.medium,
               ),
             ),
             const SizedBox(height: 10),

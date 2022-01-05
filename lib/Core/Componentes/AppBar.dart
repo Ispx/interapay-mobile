@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../Theme/JuntaPayFont.dart';
+import '../Theme/InteraPayFont.dart';
 
-class JuntaPayAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const JuntaPayAppBar({
+class InteraPayAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const InteraPayAppBar({
     required this.title,
     this.backgroundColor,
     this.size = const Size.fromHeight(80.0),
     Key? key,
   }) : super(key: key);
 
-  factory JuntaPayAppBar.white({required String title}) => JuntaPayAppBar(title: title, backgroundColor: Colors.white);
+  factory InteraPayAppBar.white({required String title}) => InteraPayAppBar(title: title, backgroundColor: Colors.white);
 
   final String title;
   final Color? backgroundColor;
@@ -21,7 +21,7 @@ class JuntaPayAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(
         title,
-        style: TextStyle(fontSize: 20, fontWeight: JuntaPayFont.semiBold),
+        style: TextStyle(fontSize: 20, fontWeight: InteraPayFont.semiBold),
       ),
       iconTheme: IconThemeData(color: backgroundColor == Colors.white ? Colors.black : Colors.white),
       elevation: 0,

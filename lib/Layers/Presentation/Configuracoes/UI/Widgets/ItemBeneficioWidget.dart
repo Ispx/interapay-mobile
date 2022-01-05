@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/Componentes/Icons/JuntaPayIcons.dart';
-import '../../../../../Core/Theme/JuntaPayColors.dart';
-import '../../../../../Core/Theme/JuntaPayFont.dart';
+import '../../../../../Core/Componentes/Icons/InteraPayIcons.dart';
+import '../../../../../Core/Theme/InteraPayColors.dart';
+import '../../../../../Core/Theme/InteraPayFont.dart';
 
 class ItemBeneficioWidget extends StatelessWidget {
   const ItemBeneficioWidget({
@@ -18,11 +18,11 @@ class ItemBeneficioWidget extends StatelessWidget {
   final double size;
   final Color? color;
 
-  factory ItemBeneficioWidget.ad() => ItemBeneficioWidget(title: 'Sem anúncios', icon: JuntaPayIcons.ad);
-  factory ItemBeneficioWidget.bill() => ItemBeneficioWidget(title: 'Despesas ilimitadas', icon: JuntaPayIcons.bill);
-  factory ItemBeneficioWidget.group() => ItemBeneficioWidget(title: 'Grupos ilimitados', icon: JuntaPayIcons.group);
-  factory ItemBeneficioWidget.user() => ItemBeneficioWidget(title: 'Amigos ilimitados', icon: JuntaPayIcons.user);
-  factory ItemBeneficioWidget.lineChart() => ItemBeneficioWidget(title: 'Relatório das despesas', icon: JuntaPayIcons.line_chart);
+  factory ItemBeneficioWidget.ad() => ItemBeneficioWidget(title: 'Sem anúncios', icon: InteraPayIcons.ad);
+  factory ItemBeneficioWidget.bill() => ItemBeneficioWidget(title: 'Despesas ilimitadas', icon: InteraPayIcons.bill);
+  factory ItemBeneficioWidget.group() => ItemBeneficioWidget(title: 'Grupos ilimitados', icon: InteraPayIcons.group);
+  factory ItemBeneficioWidget.user() => ItemBeneficioWidget(title: 'Amigos ilimitados', icon: InteraPayIcons.user);
+  factory ItemBeneficioWidget.lineChart() => ItemBeneficioWidget(title: 'Relatório das despesas', icon: InteraPayIcons.line_chart);
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,8 @@ class ItemBeneficioWidget extends StatelessWidget {
           title,
           style: TextStyle(
             fontSize: 18,
-            color: JuntaPayColors.baseDark100,
-            fontWeight: JuntaPayFont.semiBold,
+            color: InteraPayColors.baseDark100,
+            fontWeight: InteraPayFont.semiBold,
           ),
         ),
       ],

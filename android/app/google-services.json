@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "1053357815704",
-    "project_id": "juntapay-335e2",
-    "storage_bucket": "juntapay-335e2.appspot.com"
+    "project_number": "282967376422",
+    "project_id": "interapay",
+    "storage_bucket": "interapay.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1053357815704:android:5162436f0a41c76186dded",
+        "mobilesdk_app_id": "1:282967376422:android:1e412309cd13ca58c8dce7",
         "android_client_info": {
-          "package_name": "com.juntapay.juntapay"
+          "package_name": "br.com.interapay.interapay"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1053357815704-c5cfpdce75j25evb9cuqfr5iob8i4p28.apps.googleusercontent.com",
+          "client_id": "282967376422-539ls614kt1ori8kv94a9fiukle0r1mi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.juntapay.juntapay",
+            "package_name": "br.com.interapay.interapay",
             "certificate_hash": "7a28888b19540485158f55fe53879a86101770ae"
           }
         },
         {
-          "client_id": "1053357815704-dlcolcpg32nj356pg6u9gnh9ohscuuu5.apps.googleusercontent.com",
+          "client_id": "282967376422-cmbnlludhpm7g1c42ecanorolft958fe.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDxpBjapTXshPzmFwNlsZInKn8HwdxnwGk"
+          "current_key": "AIzaSyA1P0KZjZGMjT43vjKs9tfOUadeTDI65kE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1053357815704-dlcolcpg32nj356pg6u9gnh9ohscuuu5.apps.googleusercontent.com",
+              "client_id": "282967376422-cmbnlludhpm7g1c42ecanorolft958fe.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

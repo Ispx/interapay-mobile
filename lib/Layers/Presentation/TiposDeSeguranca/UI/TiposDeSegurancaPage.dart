@@ -13,7 +13,7 @@ class TiposDeSegurancaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Segurança'),
+        appBar: InteraPayAppBar(title: 'Segurança'),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: BaseSelectableList<TiposDeSeguranca>(

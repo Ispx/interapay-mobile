@@ -5,20 +5,20 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'Core/Helpers/ScreenBreakpoints.dart';
 import 'Core/Routes.dart';
 import 'Core/Services/Theme/ThemeService.dart';
-import 'Core/Theme/JuntaPayTheme.dart';
+import 'Core/Theme/InteraPayTheme.dart';
 import 'Layers/Dominio/Enums/Comuns/Temas.dart';
 import 'Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
 
-class JuntaPayApp extends StatefulWidget {
-  const JuntaPayApp({required this.initialRoute});
+class InteraPayApp extends StatefulWidget {
+  const InteraPayApp({required this.initialRoute});
 
   final String initialRoute;
 
   @override
-  State<JuntaPayApp> createState() => _JuntaPayAppState();
+  State<InteraPayApp> createState() => _InteraPayAppState();
 }
 
-class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
+class _InteraPayAppState extends State<InteraPayApp> with WidgetsBindingObserver {
   @override
   void initState() {
     WidgetsBinding.instance!.addObserver(this);
@@ -40,9 +40,9 @@ class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'JuntaPay',
+      title: 'InteraPay',
       debugShowCheckedModeBanner: false,
-      getPages: JuntaPayRoutes.routes,
+      getPages: InteraPayRoutes.routes,
       initialRoute: widget.initialRoute,
       defaultTransition: Transition.cupertino,
       themeMode: ThemeService.temaAtual != Temas.Dispositivo
@@ -50,8 +50,8 @@ class _JuntaPayAppState extends State<JuntaPayApp> with WidgetsBindingObserver {
               ? ThemeMode.light
               : ThemeMode.dark
           : ThemeMode.system,
-      theme: JuntaPayTheme.light,
-      darkTheme: JuntaPayTheme.dark,
+      theme: InteraPayTheme.light,
+      darkTheme: InteraPayTheme.dark,
       onDispose: () async => await database.close(),
       builder: (context, child) => ResponsiveWrapper.builder(
         ClampingScrollWrapper.builder(

@@ -1,4 +1,4 @@
-import '../../../../Core/Helpers/JuntaUtils.dart';
+import '../../../../Core/Helpers/InteraPayUtils.dart';
 import '../../Enums/Financas/TipoDePessoa.dart';
 import 'PossuiId.dart';
 
@@ -25,11 +25,11 @@ class PessoaEntity extends PossuiId {
   }
 
   //TODO: Criar a validação de telefone
-  bool get emailEhValido => JuntaPayUtils.isNotEmpty(email) ? JuntaPayUtils.isValidEmail(email!) : false;
+  bool get emailEhValido => InteraPayUtils.isNotEmpty(email) ? InteraPayUtils.isValidEmail(email!) : false;
   bool get telefoneEhValido => throw UnimplementedError();
-  bool get cpfCnpjEhValido => JuntaPayUtils.isNotEmpty(cpfCnpj) ? JuntaPayUtils.isValidCpfCnpj(cpfCnpj) : false;
+  bool get cpfCnpjEhValido => InteraPayUtils.isNotEmpty(cpfCnpj) ? InteraPayUtils.isValidCpfCnpj(cpfCnpj) : false;
 
   //TODO: Criar a formatação de telefone
-  String get cpfCnpjFormatado => JuntaPayUtils.formatarCpfCnpj(cpfCnpj);
+  String get cpfCnpjFormatado => InteraPayUtils.formatarCpfCnpj(cpfCnpj);
   String get telefoneFormatado => throw UnimplementedError();
 }

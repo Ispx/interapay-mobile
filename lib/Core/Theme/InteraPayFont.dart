@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class JuntaPayFont {
-  const JuntaPayFont._();
+class InteraPayFont {
+  const InteraPayFont._();
   
   static const String font = 'Inter';
 

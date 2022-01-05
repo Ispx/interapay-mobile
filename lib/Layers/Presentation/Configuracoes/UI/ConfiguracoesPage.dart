@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'Widgets/JuntaPayProWidget.dart';
+import 'Widgets/InteraPayProWidget.dart';
 import 'Widgets/ItemDaConfiguracaoWidget.dart';
 import '../ItemDaConfiguracao.dart';
 import '../Controllers/ConfiguracoesController.dart';
-import '../../../../Core/Services/JuntaPay/JuntaPayBottomSheet.dart';
+import '../../../../Core/Services/InteraPay/InteraPayBottomSheet.dart';
 import '../../../../Core/Configuracoes.dart';
-import '../../../../Core/Theme/JuntaPayColors.dart';
+import '../../../../Core/Theme/InteraPayColors.dart';
 import '../../../../Core/Services/Router/GetxRouter.dart';
 import '../../../../Core/Componentes/AppBar.dart';
 
@@ -20,7 +20,7 @@ class ConfiguracoesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: const JuntaPayAppBar(title: 'Configurações'),
+        appBar: const InteraPayAppBar(title: 'Configurações'),
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
@@ -35,8 +35,8 @@ class ConfiguracoesPage extends StatelessWidget {
                     childrenDelegate: SliverChildListDelegate.fixed(
                       [
                         ItemDaConfiguracaoWidget(
-                          titleWidget: const JuntaPayProWidget(),
-                          onTap: () => JuntaPayBottomSheet.showAssinaturas(),
+                          titleWidget: const InteraPayProWidget(),
+                          onTap: () => InteraPayBottomSheet.showAssinaturas(),
                         ),
                         ItemDaConfiguracaoWidget(
                           configuracao: ItemDaConfiguracao('Moedas', value: Configuracoes.siglaMoedaTexto),
@@ -80,7 +80,7 @@ class ConfiguracoesPage extends StatelessWidget {
                         ),
                         ItemDaConfiguracaoWidget.withColor(
                           configuracao: ItemDaConfiguracao('Sair'),
-                          color: JuntaPayColors.error,
+                          color: InteraPayColors.error,
                           onTap: () => controller.sairDaConta(),
                         ),
                       ],

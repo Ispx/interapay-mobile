@@ -13,7 +13,7 @@ class MoedasPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Moedas'),
+        appBar: InteraPayAppBar(title: 'Moedas'),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: BaseSelectableList<Moedas>(

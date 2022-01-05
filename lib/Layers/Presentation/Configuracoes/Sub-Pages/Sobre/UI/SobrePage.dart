@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import '../Controllers/SobreController.dart';
 import '../../../ItemDaConfiguracao.dart';
 import '../../../UI/Widgets/ItemDaConfiguracaoWidget.dart';
-import '../../../../../../Core/Theme/JuntaPayFont.dart';
+import '../../../../../../Core/Theme/InteraPayFont.dart';
 import '../../../../../../Core/Configuracoes.dart';
 import '../../../../../../Core/Componentes/AppBar.dart';
-import '../../../../../../Core/Theme/JuntaPayColors.dart';
+import '../../../../../../Core/Theme/InteraPayColors.dart';
 
 class SobrePage extends StatelessWidget {
   const SobrePage({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class SobrePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const JuntaPayAppBar(title: 'Sobre'),
+      appBar: const InteraPayAppBar(title: 'Sobre'),
       body: LayoutBuilder(builder: (context, constraints) {
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -41,7 +41,7 @@ class SobrePage extends StatelessWidget {
                               childrenDelegate: SliverChildListDelegate.fixed(
                                 [
                                   ItemDaConfiguracaoWidget(
-                                    configuracao: ItemDaConfiguracao('Avalie o JuntaPay'),
+                                    configuracao: ItemDaConfiguracao('Avalie o InteraPay'),
                                     onTap: () => controller.avaliarApp(),
                                   ),
                                 ],
@@ -84,8 +84,8 @@ class SobrePage extends StatelessWidget {
                           'Desenvolvido por Bernardo Veras',
                           style: TextStyle(
                             fontSize: 16.0,
-                            color: JuntaPayColors.textGray,
-                            fontWeight: JuntaPayFont.medium,
+                            color: InteraPayColors.textGray,
+                            fontWeight: InteraPayFont.medium,
                           ),
                         ),
                       ),

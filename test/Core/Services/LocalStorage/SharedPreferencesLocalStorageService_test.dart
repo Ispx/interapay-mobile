@@ -1,8 +1,8 @@
-import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
+import 'package:interapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'package:test/test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:juntapay/Core/Services/LocalStorage/ILocalStorageService.dart';
+import 'package:interapay/Core/Services/LocalStorage/ILocalStorageService.dart';
 
 class _StoragePath {
   static const PERMITIR_EXCLUIR = 'permitir_excluir';

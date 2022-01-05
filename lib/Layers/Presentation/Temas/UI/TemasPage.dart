@@ -13,7 +13,7 @@ class TemasPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Temas'),
+        appBar: InteraPayAppBar(title: 'Temas'),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: BaseSelectableList<Temas>(

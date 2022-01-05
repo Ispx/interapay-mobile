@@ -3,11 +3,11 @@ import 'package:responsive_framework/responsive_framework.dart';
 
 import 'Button.dart';
 import '../Services/Router/GetxRouter.dart';
-import '../Theme/JuntaPayColors.dart';
-import '../Theme/JuntaPayFont.dart';
+import '../Theme/InteraPayColors.dart';
+import '../Theme/InteraPayFont.dart';
 
-class JuntaPayBottomSheetWidget extends StatelessWidget {
-  const JuntaPayBottomSheetWidget({
+class InteraPayBottomSheetWidget extends StatelessWidget {
+  const InteraPayBottomSheetWidget({
     Key? key,
     this.title,
     this.description,
@@ -36,7 +36,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
 
   final Widget? customContent;
 
-  factory JuntaPayBottomSheetWidget.withoutButton({
+  factory InteraPayBottomSheetWidget.withoutButton({
     String? title,
     String? description,
     bool showDragDownWidget = true,
@@ -44,7 +44,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
     void Function()? onCloseButton,
     Widget? customContent,
   }) =>
-      JuntaPayBottomSheetWidget(
+      InteraPayBottomSheetWidget(
         title: title,
         description: description,
         primaryButtonText: null,
@@ -55,7 +55,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
         customContent: customContent,
       );
 
-  factory JuntaPayBottomSheetWidget.oneButton({
+  factory InteraPayBottomSheetWidget.oneButton({
     String? title,
     String? description,
     String buttonText = 'Continuar',
@@ -65,7 +65,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
     void Function()? onCloseButton,
     Widget? customContent,
   }) =>
-      JuntaPayBottomSheetWidget(
+      InteraPayBottomSheetWidget(
         title: title,
         description: description,
         primaryButtonText: buttonText,
@@ -97,7 +97,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
           if (showDragDownWidget == true) ...{
             Container(
               decoration: BoxDecoration(
-                color: JuntaPayColors.primary40,
+                color: InteraPayColors.primary40,
                 borderRadius: BorderRadius.circular(50),
               ),
               height: 5,
@@ -123,7 +123,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
                 icon: Icon(
                   Icons.close,
                   size: 24,
-                  color: JuntaPayColors.baseDark75,
+                  color: InteraPayColors.baseDark75,
                 ),
               ),
             ),
@@ -141,8 +141,8 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 20,
-                    color: JuntaPayColors.baseDark100,
-                    fontWeight: JuntaPayFont.bold,
+                    color: InteraPayColors.baseDark100,
+                    fontWeight: InteraPayFont.bold,
                   ),
                 ),
               ),
@@ -159,8 +159,8 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontSize: 18,
-                      color: JuntaPayColors.textGray,
-                      fontWeight: JuntaPayFont.medium,
+                      color: InteraPayColors.textGray,
+                      fontWeight: InteraPayFont.medium,
                     ),
                   ),
                 ),
@@ -183,7 +183,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
                 if (secondaryButtonText?.isNotEmpty == true) ...{
                   ResponsiveRowColumnItem(
                     rowFlex: 1,
-                    child: JuntaPayButton.secondary(
+                    child: InteraPayButton.secondary(
                       title: secondaryButtonText!,
                       onTap: () {
                         if (secondaryButtonTap == null) router.back<bool>(result: false);
@@ -196,7 +196,7 @@ class JuntaPayBottomSheetWidget extends StatelessWidget {
                 if (primaryButtonText?.isNotEmpty == true) ...{
                   ResponsiveRowColumnItem(
                     rowFlex: 1,
-                    child: JuntaPayButton(
+                    child: InteraPayButton(
                       title: primaryButtonText!,
                       onTap: () {
                         if (primaryButtonTap == null) router.back<bool>(result: true);

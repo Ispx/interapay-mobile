@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Componentes/ProTagWidget.dart';
-import '../../../../../Core/Theme/JuntaPayColors.dart';
-import '../../../../../Core/Theme/JuntaPayFont.dart';
+import '../../../../../Core/Theme/InteraPayColors.dart';
+import '../../../../../Core/Theme/InteraPayFont.dart';
 
-class JuntaPayProWidget extends StatelessWidget {
-  const JuntaPayProWidget({
+class InteraPayProWidget extends StatelessWidget {
+  const InteraPayProWidget({
     Key? key,
   }) : super(key: key);
 
@@ -14,13 +14,13 @@ class JuntaPayProWidget extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'JuntaPay',
+          'InteraPay',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
             fontSize: 18,
-            color: JuntaPayColors.baseDark75,
-            fontWeight: JuntaPayFont.bold,
+            color: InteraPayColors.baseDark75,
+            fontWeight: InteraPayFont.bold,
           ),
         ),
         SizedBox(width: 10),

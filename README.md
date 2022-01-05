@@ -11,7 +11,7 @@
 ## Instalação
 
 ```bash
-git clone https://github.com/bernardoveras/juntapay-mobile.git
+git clone https://github.com/bernardoveras/interapay-mobile.git
 
 flutter pub get
 

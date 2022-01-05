@@ -1,5 +1,5 @@
 import 'ContaBancaria.dart';
-import '../../../../Core/Helpers/JuntaUtils.dart';
+import '../../../../Core/Helpers/InteraPayUtils.dart';
 import '../../../../Core/Helpers/ValidacaoComMensagem.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../Comuns/ParticipanteDaDespesa.dart';
@@ -76,7 +76,7 @@ class DespesaEntity extends PossuiId {
   ValidacaoComMensagem validarFormaDePagamento() {
     ValidacaoComMensagem validacao = ValidacaoComMensagem.valido();
 
-    if (formaDePagamento == FormaDePagamento.Pix && JuntaPayUtils.isNotEmpty(chavePix) == false)
+    if (formaDePagamento == FormaDePagamento.Pix && InteraPayUtils.isNotEmpty(chavePix) == false)
       validacao = ValidacaoComMensagem.invalido('Informe a chave pix');
 
     if (formaDePagamento == FormaDePagamento.TransferenciaBancaria && contaBancaria == null)

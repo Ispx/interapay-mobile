@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Componentes/CustomSwitcher.dart';
-import '../../../../../Core/Theme/JuntaPayColors.dart';
-import '../../../../../Core/Theme/JuntaPayFont.dart';
+import '../../../../../Core/Theme/InteraPayColors.dart';
+import '../../../../../Core/Theme/InteraPayFont.dart';
 
 class ItemNotificacaoWidget extends StatelessWidget {
   const ItemNotificacaoWidget({
@@ -32,8 +32,8 @@ class ItemNotificacaoWidget extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 18,
-                  color: JuntaPayColors.baseDark75,
-                  fontWeight: JuntaPayFont.semiBold,
+                  color: InteraPayColors.baseDark75,
+                  fontWeight: InteraPayFont.semiBold,
                 ),
               ),
               Container(
@@ -41,8 +41,8 @@ class ItemNotificacaoWidget extends StatelessWidget {
                   description,
                   style: TextStyle(
                     fontSize: 16,
-                    color: JuntaPayColors.baseDark25,
-                    fontWeight: JuntaPayFont.medium,
+                    color: InteraPayColors.baseDark25,
+                    fontWeight: InteraPayFont.medium,
                   ),
                 ),
                 width: 220,

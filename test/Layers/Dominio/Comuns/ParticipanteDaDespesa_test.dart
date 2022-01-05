@@ -1,6 +1,6 @@
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/ParticipanteDaDespesa.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
-import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Comuns/ParticipanteDaDespesa.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
+import 'package:interapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
 import 'package:test/test.dart';
 
 main() {

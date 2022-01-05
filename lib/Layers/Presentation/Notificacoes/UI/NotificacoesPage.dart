@@ -13,7 +13,7 @@ class NotificacoesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Notificações'),
+        appBar: InteraPayAppBar(title: 'Notificações'),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Container(

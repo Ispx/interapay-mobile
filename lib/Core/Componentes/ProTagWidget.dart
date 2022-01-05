@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Theme/JuntaPayFont.dart';
+import '../Theme/InteraPayFont.dart';
 
 class ProTagWidget extends StatelessWidget {
   const ProTagWidget({
@@ -22,7 +22,7 @@ class ProTagWidget extends StatelessWidget {
         style: const TextStyle(
           fontSize: 16,
           color: Colors.white,
-          fontWeight: JuntaPayFont.bold,
+          fontWeight: InteraPayFont.bold,
         ),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class JuntaPayIcons {
-  JuntaPayIcons._();
+class InteraPayIcons {
+  InteraPayIcons._();
 
   static const _kFontFam = 'JuntaPay';
   static const String? _kFontPkg = null;

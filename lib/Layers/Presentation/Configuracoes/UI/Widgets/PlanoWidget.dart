@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../Core/Theme/JuntaPayFont.dart';
+import '../../../../../Core/Theme/InteraPayFont.dart';
 import '../../../../Dominio/Enums/Comuns/Planos.dart';
 
 class PlanoWidget extends StatelessWidget {
@@ -54,7 +54,7 @@ class PlanoWidget extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
-                    fontWeight: JuntaPayFont.semiBold,
+                    fontWeight: InteraPayFont.semiBold,
                   ),
                 ),
               ],
@@ -95,7 +95,7 @@ class PlanoWidget extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 18,
                   color: Theme.of(context).primaryColor,
-                  fontWeight: JuntaPayFont.bold,
+                  fontWeight: InteraPayFont.bold,
                 ),
               ),
               const SizedBox(height: 5),
@@ -104,7 +104,7 @@ class PlanoWidget extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 16,
                   color: Theme.of(context).primaryColor,
-                  fontWeight: JuntaPayFont.medium,
+                  fontWeight: InteraPayFont.medium,
                 ),
               ),
             ],

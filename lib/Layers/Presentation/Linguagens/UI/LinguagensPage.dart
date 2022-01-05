@@ -13,7 +13,7 @@ class LinguagensPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
-        appBar: JuntaPayAppBar(title: 'Linguagens'),
+        appBar: InteraPayAppBar(title: 'Linguagens'),
         body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: BaseSelectableList<Linguagens>(

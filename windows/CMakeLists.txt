@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(juntapay LANGUAGES CXX)
+project(interapay LANGUAGES CXX)
 
-set(BINARY_NAME "juntapay")
+set(BINARY_NAME "interapay")
 
 cmake_policy(SET CMP0063 NEW)
 

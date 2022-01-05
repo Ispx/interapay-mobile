@@ -1,8 +1,8 @@
 import 'package:flutter/services.dart';
 import 'package:brasil_fields/brasil_fields.dart';
 
-class JuntaPayUtils {
-  JuntaPayUtils._();
+class InteraPayUtils {
+  InteraPayUtils._();
 
   static final RegExp _emailRegex = RegExp(
       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$');

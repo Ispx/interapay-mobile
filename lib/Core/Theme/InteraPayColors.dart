@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../Helpers/HexColor.dart';
 
-class JuntaPayColors {
-  const JuntaPayColors._();
+class InteraPayColors {
+  const InteraPayColors._();
 
   static final Color primary = primary100;
   static final Color primaryLight = primary40;

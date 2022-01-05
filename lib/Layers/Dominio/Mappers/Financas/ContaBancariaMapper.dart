@@ -1,10 +1,9 @@
-import 'package:juntapay/Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Financas/ContaBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Financas/InstituicaoBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDeContaBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Mappers/Comuns/PessoaMapper.dart';
-
 import '../IMapper.dart';
+import '../Comuns/PessoaMapper.dart';
+import '../../../Data/Database/Drift/DriftSqliteDatabase.dart';
+import '../../Entidades/Financas/ContaBancaria.dart';
+import '../../Entidades/Financas/InstituicaoBancaria.dart';
+import '../../Enums/Financas/TipoDeContaBancaria.dart';
 
 class ContaBancariaMapper extends IMapper {
   static ContaBancariaEntity fromMap(Map<String, dynamic> map) {

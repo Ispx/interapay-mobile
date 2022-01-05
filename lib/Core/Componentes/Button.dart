@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../Theme/JuntaPayColors.dart';
-import '../Theme/JuntaPayFont.dart';
+import '../Theme/InteraPayColors.dart';
+import '../Theme/InteraPayFont.dart';
 
-class JuntaPayButton extends StatelessWidget {
-  const JuntaPayButton({
+class InteraPayButton extends StatelessWidget {
+  const InteraPayButton({
     Key? key,
     required this.title,
     this.textStyle,
@@ -24,7 +24,7 @@ class JuntaPayButton extends StatelessWidget {
 
   final void Function()? onTap;
 
-  factory JuntaPayButton.secondary({
+  factory InteraPayButton.secondary({
     required String title,
     Color? backgroundColor,
     Color? foregroundColor,
@@ -32,10 +32,10 @@ class JuntaPayButton extends StatelessWidget {
     Size? size,
     TextStyle? textStyle,
   }) {
-    return JuntaPayButton(
+    return InteraPayButton(
       title: title,
-      backgroundColor: JuntaPayColors.primary20,
-      foregroundColor: JuntaPayColors.primary,
+      backgroundColor: InteraPayColors.primary20,
+      foregroundColor: InteraPayColors.primary,
       onTap: onTap,
       size: size,
       textStyle: textStyle,
@@ -49,9 +49,9 @@ class JuntaPayButton extends StatelessWidget {
         title,
         style: textStyle ??
             TextStyle(
-              fontFamily: JuntaPayFont.font,
+              fontFamily: InteraPayFont.font,
               fontSize: 18,
-              fontWeight: JuntaPayFont.bold,
+              fontWeight: InteraPayFont.bold,
               letterSpacing: 0.5,
               decoration: TextDecoration.none,
               color: foregroundColor,

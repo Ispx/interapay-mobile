@@ -1,19 +1,19 @@
 import 'package:get/get.dart';
-import 'package:juntapay/Core/Services/LocalStorage/ILocalStorageService.dart';
-import 'package:juntapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
+import 'package:interapay/Core/Services/LocalStorage/ILocalStorageService.dart';
+import 'package:interapay/Core/Services/LocalStorage/SharedPreferencesLocalStorageService.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test/test.dart';
 
-import 'package:juntapay/Layers/Dominio/Entidades/Financas/ContaBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Financas/InstituicaoBancaria.dart';
-import 'package:juntapay/Layers/Dominio/Enums/Financas/FormaDePagamento.dart';
-import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDeContaBancaria.dart';
-import 'package:juntapay/Core/Configuracoes.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/ParticipanteDaDespesa.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
-import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
-import 'package:juntapay/Layers/Dominio/Entidades/Financas/Despesa.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Financas/ContaBancaria.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Financas/InstituicaoBancaria.dart';
+import 'package:interapay/Layers/Dominio/Enums/Financas/FormaDePagamento.dart';
+import 'package:interapay/Layers/Dominio/Enums/Financas/TipoDeContaBancaria.dart';
+import 'package:interapay/Core/Configuracoes.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Comuns/ParticipanteDaDespesa.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Comuns/Pessoa.dart';
+import 'package:interapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
+import 'package:interapay/Layers/Dominio/Entidades/Financas/Despesa.dart';
 
 void main() {
   List<ParticipanteDaDespesaEntity> gerarAmigos() {
@@ -63,9 +63,9 @@ void main() {
   setUpAll(() async {
     
     PackageInfo.setMockInitialValues(
-      appName: "JuntaPay",
+      appName: "InteraPay",
       buildNumber: "1",
-      packageName: "com.juntapay.juntapay",
+      packageName: "br.com.interapay.interapay",
       version: "1.0.0",
       buildSignature: "7A28888B19540485158F55FE53879A86101770AE",
     );

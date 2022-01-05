@@ -1,9 +1,9 @@
-import 'package:juntapay/Layers/Data/Database/Drift/DAOs/Comuns/ContasBancariasDao.dart';
+import 'package:interapay/Layers/Data/Database/Drift/DAOs/Comuns/ContasBancariasDao.dart';
 import 'package:test/test.dart';
 
-import 'package:juntapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
-import 'package:juntapay/Layers/Data/Database/Drift/DAOs/Comuns/PessoasDao.dart';
-import 'package:juntapay/Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
+import 'package:interapay/Layers/Dominio/Enums/Financas/TipoDePessoa.dart';
+import 'package:interapay/Layers/Data/Database/Drift/DAOs/Comuns/PessoasDao.dart';
+import 'package:interapay/Layers/Data/Database/Drift/DriftSqliteDatabase.dart';
 import 'package:uuid/uuid.dart';
 
 void main() {

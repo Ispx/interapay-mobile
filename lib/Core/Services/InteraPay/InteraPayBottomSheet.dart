@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 import '../../Componentes/AssinaturaWidget.dart';
 import '../../Componentes/BottomSheet.dart';
 
-class JuntaPayBottomSheet {
-  const JuntaPayBottomSheet._();
+class InteraPayBottomSheet {
+  const InteraPayBottomSheet._();
 
   static Future<T?> show<T>({
     String? title,
@@ -20,7 +20,7 @@ class JuntaPayBottomSheet {
     Widget? customContent,
   }) async {
     return await Get.bottomSheet(
-      JuntaPayBottomSheetWidget(
+      InteraPayBottomSheetWidget(
         title: title,
         description: description,
         primaryButtonTap: primaryButtonTap,
@@ -48,7 +48,7 @@ class JuntaPayBottomSheet {
     Widget? customContent,
   }) async {
     return await Get.bottomSheet(
-      JuntaPayBottomSheetWidget.oneButton(
+      InteraPayBottomSheetWidget.oneButton(
         title: title,
         description: description,
         buttonOnTap: buttonOnTap,
@@ -72,7 +72,7 @@ class JuntaPayBottomSheet {
     Widget? customContent,
   }) async {
     return await Get.bottomSheet(
-      JuntaPayBottomSheetWidget.withoutButton(
+      InteraPayBottomSheetWidget.withoutButton(
         title: title,
         description: description,
         onCloseButton: onCloseButton,

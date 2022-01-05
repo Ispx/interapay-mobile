@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../CardItemWidget.dart';
 import '../CheckWidget.dart';
-import '../../Theme/JuntaPayColors.dart';
+import '../../Theme/InteraPayColors.dart';
 
 class BaseSelectableList<T> extends StatelessWidget {
   const BaseSelectableList({
@@ -44,7 +44,7 @@ class BaseSelectableList<T> extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             fontSize: 18,
-                            color: JuntaPayColors.baseDark75,
+                            color: InteraPayColors.baseDark75,
                           ),
                         ),
                       ),

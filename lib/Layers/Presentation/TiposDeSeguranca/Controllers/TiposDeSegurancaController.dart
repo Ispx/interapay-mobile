@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../../../Core/Configuracoes.dart';
-import '../../../../Core/Services/JuntaPay/JuntaPayBottomSheet.dart';
+import '../../../../Core/Services/InteraPay/InteraPayBottomSheet.dart';
 import '../../../Dominio/Enums/Comuns/TiposDeSeguranca.dart';
 
 class TiposDeSegurancaController extends GetxController {
@@ -9,7 +9,7 @@ class TiposDeSegurancaController extends GetxController {
   TiposDeSeguranca? get tipoDeSegurancaSelecionado => _tipoDeSegurancaSelecionado.value;
   Future<void> selecionarTiposDeSeguranca(TiposDeSeguranca? value) async {
     if (value == tipoDeSegurancaSelecionado) {
-      bool removerSeguranca = await JuntaPayBottomSheet.show<bool>(
+      bool removerSeguranca = await InteraPayBottomSheet.show<bool>(
         title: 'Remover segurança?',
         description: 'Tem certeza que deseja remover a segurança do seu aplicativo?',
       ) ?? false;
