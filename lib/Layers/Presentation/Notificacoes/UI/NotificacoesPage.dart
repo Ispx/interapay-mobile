@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'Widgets/ItemNotificacaoWidget.dart';
+import 'Componentes/ItemNotificacaoWidget.dart';
 import '../../../../Core/Configuracoes.dart';
 import '../Controllers/NotificacoesController.dart';
 import '../../../../Core/Componentes/AppBar.dart';

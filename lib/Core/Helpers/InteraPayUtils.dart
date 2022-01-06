@@ -1,5 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:brasil_fields/brasil_fields.dart';
+import 'package:intl/intl.dart';
 
 class InteraPayUtils {
   InteraPayUtils._();
@@ -19,4 +20,7 @@ class InteraPayUtils {
   static bool isNotEmpty(String? value) => value?.isNotEmpty == true;
 
   static Future<void> hideKeyboard() async => await SystemChannels.textInput.invokeMethod('TextInput.hide');
+
+  static String formatarReal(double value, {String? pattern}) => NumberFormat(pattern ?? 'R\$ #,##0.00').format(value);
+  static String formatarData(DateTime value, {String? pattern}) => DateFormat(pattern ?? 'dd/MM/yyyy').format(value);
 }

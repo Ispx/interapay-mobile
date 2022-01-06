@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Configuracoes.dart';
@@ -22,6 +23,8 @@ class Initializer {
     try {
       WidgetsFlutterBinding.ensureInitialized();
       SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
+      Intl.defaultLocale = 'pt_BR';
 
       if (kIsWeb == false) await _inicializarFirebaseCrashlytics();
 

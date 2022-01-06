@@ -16,7 +16,11 @@ class Configuracoes {
     _obterConfiguracaoDoLocalStorage();
     assinatura = Assinaturas.Gratis;
     versaoDoAplicativo = await _obterVersaoDoAplicativo();
+    nomeDoUsuario = 'Bernardo Veras';
   }
+
+  static late String nomeDoUsuario;
+  static double saldoDoUsuario = 0.0;
 
   static late String versaoDoAplicativo;
   static late Assinaturas assinatura;
@@ -55,7 +59,7 @@ class Configuracoes {
     _tipoDeSeguranca.value = value;
 
     if (value == null) return await localStorage.delete(LocalStoragePath.TIPO_DE_SEGURANCA);
-    
+
     return await localStorage.add(LocalStoragePath.TIPO_DE_SEGURANCA, value);
   }
 
