@@ -12,6 +12,13 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeAppBar(saldo: 300),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(24),
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [],
+        ),
+      ),
     );
   }
 }
