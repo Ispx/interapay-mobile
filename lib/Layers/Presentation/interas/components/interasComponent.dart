@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/string_extensions.dart';
 import 'package:interapay/Core/Helpers/InteraPayUtils.dart';
 import 'package:interapay/Core/Theme/InteraPayColors.dart';
 import 'package:interapay/Core/Theme/InteraPayFont.dart';
@@ -35,6 +36,7 @@ class InterasComponent extends StatelessWidget {
                 '$descricao',
                 style: TextStyle(
                   fontSize: 16.0,
+                  fontFamily: InteraPayFont.font,
                   fontWeight: InteraPayFont.medium,
                   color: InteraPayColors.baseDark100,
                 ),
@@ -43,15 +45,21 @@ class InterasComponent extends StatelessWidget {
                 '$nome',
                 style: TextStyle(
                   fontSize: 14.0,
+                  fontFamily: InteraPayFont.font,
                   fontWeight: InteraPayFont.regular,
                   color: InteraPayColors.textGray,
                 ),
               ),
               Text(
                 InteraPayUtils.formatarData(dataDeCriacao!,
-                    pattern: 'dd MMM yyyy'),
+                        pattern: 'dd MMM yyyy')
+                    .toString()
+                    .split(' ')
+                    .map((e) => e.capitalize)
+                    .join(' '),
                 style: TextStyle(
                   fontSize: 14.0,
+                  fontFamily: InteraPayFont.font,
                   fontWeight: InteraPayFont.regular,
                   color: InteraPayColors.textGray,
                 ),
@@ -62,6 +70,7 @@ class InterasComponent extends StatelessWidget {
             '+ ${InteraPayUtils.formatarReal(total ?? 0.00)}',
             style: TextStyle(
               fontSize: 16.0,
+              fontFamily: InteraPayFont.font,
               fontWeight: InteraPayFont.medium,
               color: InteraPayColors.green100,
             ),
