@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
 import 'Core/Helpers/ScreenBreakpoints.dart';
 import 'Core/Routes.dart';
 import 'Core/Services/Theme/ThemeService.dart';
@@ -42,7 +40,6 @@ class _InteraPayAppState extends State<InteraPayApp>
 
   @override
   Widget build(BuildContext context) {
-    initializeDateFormatting('pt_Br');
     return GetMaterialApp(
       title: 'InteraPay',
       debugShowCheckedModeBanner: false,
