@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 import 'Core/Helpers/ScreenBreakpoints.dart';
@@ -18,7 +19,8 @@ class InteraPayApp extends StatefulWidget {
   State<InteraPayApp> createState() => _InteraPayAppState();
 }
 
-class _InteraPayAppState extends State<InteraPayApp> with WidgetsBindingObserver {
+class _InteraPayAppState extends State<InteraPayApp>
+    with WidgetsBindingObserver {
   @override
   void initState() {
     WidgetsBinding.instance!.addObserver(this);
@@ -34,11 +36,13 @@ class _InteraPayAppState extends State<InteraPayApp> with WidgetsBindingObserver
 
   @override
   void didChangePlatformBrightness() {
-    if (ThemeService.temaAtual == Temas.Dispositivo) ThemeService.alterarParaTemaDoDispositivo();
+    if (ThemeService.temaAtual == Temas.Dispositivo)
+      ThemeService.alterarParaTemaDoDispositivo();
   }
 
   @override
   Widget build(BuildContext context) {
+    initializeDateFormatting('pt_Br');
     return GetMaterialApp(
       title: 'InteraPay',
       debugShowCheckedModeBanner: false,
