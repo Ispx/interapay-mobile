@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:interapay/Layers/Presentation/Home/UI/Componentes/UltimasInterasComponent.dart';
+import 'package:interapay/Layers/Presentation/interas/components/interasComponent.dart';
 
 import 'Componentes/HomeAppBar.dart';
 
@@ -13,10 +15,11 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: HomeAppBar(saldo: 300),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(24),
         physics: BouncingScrollPhysics(),
         child: Column(
-          children: [],
+          children: [
+            UltimasInterasComponent(),
+          ],
         ),
       ),
     );
