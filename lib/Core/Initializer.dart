@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,12 +23,13 @@ class Initializer {
   static Future<void> init() async {
     try {
       WidgetsFlutterBinding.ensureInitialized();
-      SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+      SystemChrome.setSystemUIOverlayStyle(
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent));
 
       Intl.defaultLocale = 'pt_BR';
 
       if (kIsWeb == false) await _inicializarFirebaseCrashlytics();
-
+      await initializeDateFormatting(Intl.defaultLocale);
       await _inicializarServicosGlobais();
       await _inicializarDatabase();
       await _inicializarGoogleAds();
@@ -40,8 +42,10 @@ class Initializer {
   }
 
   static Future<void> _inicializarServicosGlobais() async {
-    SharedPreferences _sharedPreferences = await SharedPreferences.getInstance();
-    Get.lazyPut<ILocalStorageService>(() => SharedPreferencesLocalStorageService(_sharedPreferences));
+    SharedPreferences _sharedPreferences =
+        await SharedPreferences.getInstance();
+    Get.lazyPut<ILocalStorageService>(
+        () => SharedPreferencesLocalStorageService(_sharedPreferences));
 
     Get.lazyPut<InteraPayRouter>(() => GetxInteraPayRouter());
   }
