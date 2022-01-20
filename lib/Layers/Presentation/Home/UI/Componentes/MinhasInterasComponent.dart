@@ -68,6 +68,12 @@ class MinhasInterasComponent extends StatelessWidget {
                     descricao: 'Compras no Shopping',
                     total: 200.00,
                   ),
+                  InterasComponent(
+                    nome: 'Isaque Paixão',
+                    dataDeCriacao: DateTime.now(),
+                    descricao: 'Compras no Shopping',
+                    total: 200.00,
+                  ),
                 ],
               ),
             ),
